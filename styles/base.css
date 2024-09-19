@@ -118,11 +118,11 @@ ul {
 
 .li-a {
     color: blue;
-    
+    cursor: pointer;
 }
 
-.li-a:visited {
-    cursor: pointer;
+.li-a :visited {
+    color: rgb(233, 103, 125);
 }
 
 footer {
