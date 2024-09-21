@@ -9,7 +9,7 @@ const today = new Date();
 full.innerHTML = `Last Modification <span class="highlight">${new Intl.DateTimeFormat(
 	"en-US",
 	{
-		dateStyle: "full",
+		lastmodified: "full",
 	}
 ).format(today)}`
 
