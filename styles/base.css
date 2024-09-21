@@ -139,6 +139,21 @@ footer {
 }
 
 
+p {
+	margin: 0.25rem;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	padding: 0.5rem 0.75rem;
+	background-color: #eee;
+}
+
+.highlight {
+	color: rgb(242, 242, 247);
+	font-weight: 700;
+	font-family: hebrew;
+}
+
+
+
 /*body {
     display: grid;
     height: 100vh;
