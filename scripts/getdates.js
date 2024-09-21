@@ -33,7 +33,6 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 }`;
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
-console.log(lastModified.innerHTML)
 
 
 
