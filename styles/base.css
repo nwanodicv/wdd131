@@ -115,6 +115,7 @@ caption {
 }
 
 ul {
+    display: grid;
     padding-top: 6rem;
 }
 
