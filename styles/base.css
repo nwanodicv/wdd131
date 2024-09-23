@@ -74,6 +74,8 @@ a:hover {
 }
 
 .profile-pcs {
+    max-width: 100%;
+    display: block;
     width:250px;
     height: 200px;
     padding-left: 8rem;
