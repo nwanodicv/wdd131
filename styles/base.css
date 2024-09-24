@@ -5,6 +5,9 @@
     margin-right: 0;
 }
 
+header, footer, .about-me {
+    background-color: rgb(72, 72, 230);
+}
 
 body {
     border-top-color: black;
@@ -18,7 +21,6 @@ body {
 header {
     text-align: center;
     color: white;
-    background-color: rgb(39, 144, 185);
     grid-column: 1 / 5;
     padding-top: 0.4rem;
 }
@@ -65,7 +67,6 @@ a:hover {
     border-radius: 0.2rem;
     text-align: center;
     padding: 5px;
-    background-color: rgb(39, 144, 185);
 }
 
 .about-me-container {
@@ -132,7 +133,6 @@ ul {
 
 footer {
     margin-top: 1rem;
-    background-color: rgb(39, 144, 185);
     text-align: center;
     grid-column: 5 / 1;
     height: 10vh;
