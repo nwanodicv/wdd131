@@ -1,3 +1,7 @@
+* {
+    margin: 0;
+}
+
 body {
     font-family: 'roboto', sans-serif;
 }
@@ -22,7 +26,7 @@ div {
 }
 
 .nav-bar-container {
-    display: flex;
+    display: block;
     justify-content: space-evenly;
 }
 
@@ -46,8 +50,12 @@ main {
 }
 
 .album-container{
-    display: grid;
+    display: block;
     max-width: 500px;
+}
+
+caption {
+    text-align: center;
 }
 
 figure {

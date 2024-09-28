@@ -21,6 +21,7 @@
 
     h2 {
         text-align: center;
+        margin-left: 10rem;
         
     }
 
@@ -35,6 +36,7 @@
 
     .main-album-container {
         background-color: white;
+        margin-left: 10rem;
     }
     
     .album-container{
