@@ -66,13 +66,40 @@ const temples = [
     },
 
     {
-        templeName: "Atlanta Georgia",
-      location: "Sandy Springs, Georgia",
-      dedication: "June 1, 1983",
-      area: "30328",
+      templeName: "Accra Ghana",
+      location: "Accra Ghana",
+      dedication: " 11 January 2004",
+      area: "17,500",
       imageUrl: 
-      "https://lh3.googleusercontent.com/p/AF1QipNYFLh8IJBgzjJkQ3RAhUv-7WCozPaPVYn0PM37=s680-w680-h510"
-    }
+      "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-13760-main.jpg"
+    },
+
+    {
+      templeName: "South Africa",
+      location: "Parktown, Johannesburg",
+      dedication: "24 August 1985",
+      area: "19,184",
+      imageUrl: 
+      "https://churchofjesuschristtemples.org/assets/img/temples/johannesburg-south-africa-temple/johannesburg-south-africa-temple-43596-thumb.jpg"
+  },
+  
+  {
+    templeName: "Melbourne Australia",
+    location: "76 Cathies, Wantirna South",
+    dedication: "June 16, 2000",
+    area: " 10,700",
+    imageUrl: 
+    "https://churchofjesuschrist.org/imgs/48e36732ca023c6cbe859be980617e4ca2cebe2a/full/320%2C/0/default"
+},
+
+{
+  templeName: "Perth Australia",
+  location: " 163 Wordsworth, Yokine, Australia",
+  dedication: " May 20, 2001",
+  area: " 10,700",
+  imageUrl: 
+  "https://churchofjesuschristtemples.org/assets/img/temples/perth-australia-temple/perth-australia-temple-34994-main.jpg"
+}
   ];
 
 let albumHTML = '';
