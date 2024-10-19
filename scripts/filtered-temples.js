@@ -80,7 +80,8 @@ const temples = [
       dedication: " 11 January 2004",
       area: "17,500",
       imageUrl: 
-      "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-13760-main.jpg"
+      "https://churchofjesuschristtemples.org/assets/img/temples/accra-ghana-temple/accra-ghana-temple-13760-main.jpg",
+      alt: "Accra Ghana"
     },
 
     {
@@ -90,7 +91,8 @@ const temples = [
       dedication: "24 August 1985",
       area: "19,184",
       imageUrl: 
-      "https://churchofjesuschristtemples.org/assets/img/temples/johannesburg-south-africa-temple/johannesburg-south-africa-temple-43596-thumb.jpg"
+      "https://churchofjesuschristtemples.org/assets/img/temples/johannesburg-south-africa-temple/johannesburg-south-africa-temple-43596-thumb.jpg",
+      alt: "South Africa"
   },
   
   {
@@ -100,7 +102,8 @@ const temples = [
     dedication: "June 16, 2000",
     area: " 10,700",
     imageUrl: 
-    "https://churchofjesuschrist.org/imgs/48e36732ca023c6cbe859be980617e4ca2cebe2a/full/320%2C/0/default"
+    "https://churchofjesuschrist.org/imgs/48e36732ca023c6cbe859be980617e4ca2cebe2a/full/320%2C/0/default",
+    alt: "Melbourne Australia"
 },
 
 {
@@ -110,7 +113,8 @@ const temples = [
   dedication: " May 20, 2001",
   area: " 10,700",
   imageUrl: 
-  "https://churchofjesuschristtemples.org/assets/img/temples/perth-australia-temple/perth-australia-temple-34994-main.jpg"
+  "https://churchofjesuschristtemples.org/assets/img/temples/perth-australia-temple/perth-australia-temple-34994-main.jpg",
+  alt: "Perth Australia"
 }];
 
 let albumHTML = '';

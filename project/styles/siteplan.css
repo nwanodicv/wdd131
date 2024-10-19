@@ -1,0 +1,138 @@
+* {
+    margin: 0;
+}
+
+  :root {
+    --primary-color: #86e646;
+    --secondary-color: #894857;
+    --accent1-color: #759930;
+    --accent2-color: #508374;
+
+    --heading-font: 'sans', serif;
+    --paragraph-font: 'sans', serif;
+
+    --nav-background-color: #873936;
+    --nav-link-color: #f0f0ee;
+    --nav-hover-link-color: #256847;
+    --nav-hover-background-color: #1111a3;
+    --h4-color: rgb(7, 7, 7);
+    --h2-color: #5160ec;
+}
+
+  body {
+    font-family: var(--paragraph-font);
+    padding: 10px;
+  }
+
+  .main-header {
+    background-color: var(--accent1-color);
+    border-style: none;
+  }
+
+
+  .navigation-bar {
+    background-color: var(--accent1-color);
+    margin-bottom: 2rem;
+  }
+
+  main{
+    background-color:rgb(225, 233, 235);
+  }
+
+  section {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem; 
+  }
+
+  .div-container {
+    border-style: solid;
+    width: 15.9rem;
+    height: 15rem;
+    column-gap: 2rem;
+    background-color: rgb(245, 241, 241);
+  }
+
+ h4 {
+    font-family: var(--heading-font);
+    color: var(--h4-color);
+    text-align: center;
+    width: 30rem;
+    margin-left: 26rem;
+  }
+
+  h2 {
+    margin-top: 3rem;
+    color: var(--h2-color);
+    text-align: center;
+  }
+
+  h1 {
+    text-align: center;
+    color: rgb(228, 206, 206);
+    font-size: bold;
+  }
+
+  header {
+    padding: 20px;
+    border-style: solid;
+  }
+
+  .my-name {
+    color: white;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+
+ 
+  nav {
+    background-color: var();
+    font-size: 1.2rem;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  nav a {
+    text-decoration: none;
+    padding: 1rem;
+  }
+
+  /*nav a:link, nav a:visited {
+    color: var(--nav-link-color);
+  }
+
+  nav a:hover{
+    color: white;
+  }*/
+  
+  footer {
+    background-color: var(--accent1-color);
+    color: white;
+    text-align: center;
+
+}
+
+span {
+    font-size: 10px;
+    margin-left: 4rem;
+    text-align: center;
+
+}
+
+.about-us-wireframe {
+  height: 15rem;
+  border-style: solid;
+  column-gap: 2rem;
+  width: 100rem;
+}
+
+.anchor  {
+  border-style: solid;
+  width: 6rem;
+  height: 0.1rem;
+  margin-top: 1rem;
+}
+
+input {
+  margin-left: 34.5rem;
+}

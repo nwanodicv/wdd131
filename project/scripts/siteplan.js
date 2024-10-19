@@ -1,3 +1,4 @@
+// page datetime last modification
 let lastModified = document.querySelector('#last-modification');
 
 lastModified.innerHTML = ""
@@ -16,8 +17,4 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 }`;
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
-
-
-
-
 
