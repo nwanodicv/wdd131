@@ -19,6 +19,10 @@
     --h2-color: #5160ec;
 }
 
+@media screen and (min-width: 500px){
+
+  
+
   body {
     font-family: var(--paragraph-font);
     padding: 10px;
@@ -59,6 +63,10 @@
     text-align: center;
     width: 30rem;
     margin-left: 26rem;
+  }
+
+  .color-palette {
+    padding-top: 1rem;
   }
 
   h2 {
@@ -135,4 +143,53 @@ span {
 
 input {
   margin-left: 34.5rem;
+}
+
+.text-area {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+.search-bar {
+  text-align: center;
+}
+
+
+/*Small screen styling*/
+
+.main-1{
+  background-color:rgb(225, 233, 235);
+  margin-left: 30rem;
+}
+
+.section-1 {
+  display: block;
+  justify-content: space-between;
+  margin-top: 1rem; 
+}
+
+.div-container-1 {
+  border-style: solid;
+  width: 15.9rem;
+  height: 15rem;
+  column-gap: 2rem;
+  background-color: rgb(245, 241, 241);
+}
+.header-1 {
+  padding: 20px;
+  border-style: solid;
+  width: 13.4rem;
+  margin-left: 30rem;
+}
+
+.nav-bar-1 .a-1 {
+  font-size: large;
+  width: 5rem;
+}
+
+.a-1 {
+  margin-right: 2rem;
+  text-align: center;
+}
+  
 }

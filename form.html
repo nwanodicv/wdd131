@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Page</title>
+    <meta name="description" content="Form learning activity example page">
+    <meta name="author" content="Chimezie Victor Nwanodi">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="" href="https://fonts.googleapis.com/css2?family=roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/form.css">
+</head>
+<body>
+    <header>
+        <h1>
+            Product Review
+        </h1>
+    </header>
+    <form method="get" action="review.html">
+        <select>
+            <label>Product Name<option value="" disabled selected>Select a Product...</option></label>
+            <option value="New Cap">New Cap</option>
+        </select>
+        <h3>Overall Rating</h3>
+        <div class="star-rating">
+            <input type="radio" name="stars" id="star-a" value="5"/>
+            <label for="star-a"></label>
+      
+            <input type="radio" name="stars" id="star-b" value="4"/>
+            <label for="star-b"></label>
+        
+            <input type="radio" name="stars" id="star-c" value="3"/>
+            <label for="star-c"></label>
+        
+            <input type="radio" name="stars" id="star-d" value="2"/>
+            <label for="star-d"></label>
+        
+            <input type="radio" name="stars" id="star-e" value="1"/>
+            <label for="star-e"></label>
+      </div>
+            <input type="checkbox" id="todo" name="todo" value="todo">
+            <label for="todo" data-content="Get out of bed">Get out of bed</label>
+      
+
+    </form>
+
+    <label>INPUT: radio, required, common name, altered look with CSS stars</label>
+<div class="stars">
+	<input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
+	<input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
+	<input type="radio" id="threestar" name="stars" value="3" required><label for="threestar"></label>
+	<input type="radio" id="twostar" name="stars" value="2" required><label for="twostar"></label>
+	<input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
+</div>
+<div class="ref"><a href="https://codepen.io/nevkatz/pen/OJPBBpL" target="_blank">Star Rating Source Pen</a></div>
+<hr>
+<div class="vcentered">
+	<label for="task" data-content="Completed the Module" class="inline">INPUT: checkbox, CSS size</label>
+	<input type="checkbox" id="task" name="task" value="task">
+</div>
+<div class="ref"><a href="https://codepen.io/kathykato/pen/xxGObEp">CheckBox Line Through Source</a></div>
+
+<datalist id="l1">
+	<option>Banana</option>
+	<option>Cherry</option>
+	<option>Apple</option>
+	<option>Strawberry</option>
+	<option>Lemon</option>
+	<option>Orange</option>
+</datalist>
+
+    <script src="scripts/form.js"></script>
+</body>
+</html>
