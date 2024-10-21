@@ -32,7 +32,7 @@ body {
 .main-header {
   background-color: var(--accent1-color);
   border-style: none;
-  width: 19.1rem;
+  width: 50vh;
 }
 
 
@@ -53,7 +53,7 @@ section {
 
 .div-container {
   border-style: solid;
-  width: 21.1rem;
+  width: 55.5vh;
   height: 15rem;
   column-gap: 2rem;
   background-color: rgb(245, 241, 241);
@@ -135,7 +135,7 @@ span {
 height: 15rem;
 border-style: solid;
 column-gap: 2rem;
-width: 21.1rem;
+width: 55.5vh;
 }
 
 .anchor  {
@@ -174,7 +174,7 @@ margin-top: 1rem;
 
 .div-container-1 {
 border-style: solid;
-width: 21.1rem;
+width: 55.5vh;
 height: 15rem;
 column-gap: 2rem;
 background-color: rgb(245, 241, 241);
@@ -182,7 +182,7 @@ background-color: rgb(245, 241, 241);
 .header-1 {
 padding: 20px;
 border-style: solid;
-width: 18.5rem;
+width: 48vh;
 }
 
 .nav-bar-1 .a-1 {
