@@ -1,3 +1,4 @@
+/*............Small Screen........*/
 * {
     margin: 0;
 }
@@ -18,6 +19,173 @@
     --h4-color: rgb(7, 7, 7);
     --h2-color: #5160ec;
 }
+
+
+body {
+  font-family: var(--paragraph-font);
+  padding: 10px;
+}
+
+.main-header {
+  background-color: var(--accent1-color);
+  border-style: none;
+}
+
+
+.navigation-bar {
+  background-color: var(--accent1-color);
+  margin-bottom: 2rem;
+}
+
+main{
+  background-color:rgb(225, 233, 235);
+}
+
+section {
+  display: block;
+  justify-content: space-between;
+  margin-top: 1rem; 
+}
+
+.div-container {
+  border-style: solid;
+  width: 15.9rem;
+  height: 15rem;
+  column-gap: 2rem;
+  background-color: rgb(245, 241, 241);
+}
+
+h4 {
+  font-family: var(--heading-font);
+  color: var(--h4-color);
+}
+
+.color-palette {
+  padding-top: 1rem;
+}
+
+h2 {
+  margin-top: 3rem;
+  color: var(--h2-color);
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: rgb(228, 206, 206);
+  font-size: bold;
+}
+
+header {
+  padding: 20px;
+  border-style: solid;
+}
+
+.my-name {
+  color: white;
+  font-size: 0.9rem;
+  text-align: center;
+}
+
+
+nav {
+  background-color: var();
+  font-size: 1.2rem;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+nav a {
+  text-decoration: none;
+  padding: 1rem;
+}
+
+/*nav a:link, nav a:visited {
+  color: var(--nav-link-color);
+}
+
+nav a:hover{
+  color: white;
+}*/
+
+footer {
+  background-color: var(--accent1-color);
+  color: white;
+  text-align: center;
+
+}
+
+span {
+  font-size: 10px;
+  margin-left: 4rem;
+  text-align: center;
+
+}
+
+.about-us-wireframe {
+height: 15rem;
+border-style: solid;
+column-gap: 2rem;
+width: 16rem;
+}
+
+.anchor  {
+border-style: solid;
+width: 6rem;
+height: 0.1rem;
+margin-top: 1rem;
+}
+
+input {
+margin-left: 34.5rem;
+}
+
+.text-area {
+text-align: center;
+margin-top: 5rem;
+}
+
+.search-bar {
+text-align: center;
+}
+
+
+/*Small screen wireframe styling*/
+
+.main-1{
+background-color:rgb(225, 233, 235);
+}
+
+.section-1 {
+display: block;
+justify-content: space-between;
+margin-top: 1rem; 
+}
+
+.div-container-1 {
+border-style: solid;
+width: 15.9rem;
+height: 15rem;
+column-gap: 2rem;
+background-color: rgb(245, 241, 241);
+}
+.header-1 {
+padding: 20px;
+border-style: solid;
+width: 13.4rem;
+}
+
+.nav-bar-1 .a-1 {
+font-size: large;
+width: 5rem;
+}
+
+.a-1 {
+margin-right: 2rem;
+text-align: center;
+}
+
+
 
 @media screen and (min-width: 500px){
 
@@ -155,7 +323,7 @@ input {
 }
 
 
-/*Small screen styling*/
+/*Small screen wireframe styling*/
 
 .main-1{
   background-color:rgb(225, 233, 235);
