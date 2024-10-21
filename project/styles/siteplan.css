@@ -49,7 +49,7 @@ section {
 
 .div-container {
   border-style: solid;
-  width: 15.9rem;
+  width: 18rem;
   height: 15rem;
   column-gap: 2rem;
   background-color: rgb(245, 241, 241);
@@ -73,7 +73,7 @@ h2 {
 h1 {
   text-align: center;
   color: rgb(228, 206, 206);
-  font-size: bold;
+  font-size: small;
 }
 
 header {
@@ -126,7 +126,7 @@ span {
 height: 15rem;
 border-style: solid;
 column-gap: 2rem;
-width: 16rem;
+width: 18rem;
 }
 
 .anchor  {
@@ -164,7 +164,7 @@ margin-top: 1rem;
 
 .div-container-1 {
 border-style: solid;
-width: 15.9rem;
+width: 18rem;
 height: 15rem;
 column-gap: 2rem;
 background-color: rgb(245, 241, 241);
@@ -172,7 +172,7 @@ background-color: rgb(245, 241, 241);
 .header-1 {
 padding: 20px;
 border-style: solid;
-width: 13.4rem;
+width: 15.5rem;
 }
 
 .nav-bar-1 .a-1 {
