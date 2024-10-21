@@ -1,6 +1,7 @@
 /*............Small Screen........*/
 * {
     margin: 0;
+    max-width: 1500px;
 }
 
   :root {
@@ -24,6 +25,8 @@
 body {
   font-family: var(--paragraph-font);
   padding: 10px;
+  max-width: 1500px;
+  width: 57vh;
 }
 
 .main-header {
@@ -77,8 +80,9 @@ h1 {
 }
 
 header {
-  padding: 20px;
+  padding: 18px;
   border-style: solid;
+  width: 15.7rem;
 }
 
 .my-name {
@@ -90,14 +94,18 @@ header {
 
 nav {
   background-color: var();
-  font-size: 1.2rem;
+  font-size: 1rem;
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
 }
 
 nav a {
   text-decoration: none;
-  padding: 1rem;
+  padding: 0.5rem;
+}
+
+a {
+  color: var(--nav-link-color);
 }
 
 /*nav a:link, nav a:visited {
@@ -134,10 +142,11 @@ border-style: solid;
 width: 6rem;
 height: 0.1rem;
 margin-top: 1rem;
+color: var(--h4-color);
 }
 
 input {
-margin-left: 34.5rem;
+margin-left: 4rem;
 }
 
 .text-area {
@@ -189,11 +198,16 @@ text-align: center;
 
 @media screen and (min-width: 500px){
 
-  
+  * {
+    margin: 0 0 0 0;
+    max-width: 1500px;
+}
 
   body {
     font-family: var(--paragraph-font);
     padding: 10px;
+    max-width: 1500px;
+    width: 219vh;
   }
 
   .main-header {
@@ -252,6 +266,7 @@ text-align: center;
   header {
     padding: 20px;
     border-style: solid;
+    width: 80.1rem;
   }
 
   .my-name {
@@ -273,13 +288,9 @@ text-align: center;
     padding: 1rem;
   }
 
-  /*nav a:link, nav a:visited {
-    color: var(--nav-link-color);
+  a {
+    color: var(--h2-color);
   }
-
-  nav a:hover{
-    color: white;
-  }*/
   
   footer {
     background-color: var(--accent1-color);
@@ -307,6 +318,7 @@ span {
   width: 6rem;
   height: 0.1rem;
   margin-top: 1rem;
+  color: var(--h2-color);
 }
 
 input {
