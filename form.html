@@ -3,73 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Page</title>
-    <meta name="description" content="Form learning activity example page">
+    <title>Temple Album</title>
+    <meta name="description" content="madia query learning activity example page">
     <meta name="author" content="Chimezie Victor Nwanodi">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="" href="https://fonts.googleapis.com/css2?family=roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles/form.css">
+    <!-- Top Navigation Menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <header>
-        <h1>
-            Product Review
-        </h1>
+        <h1>Product Review</h1>
+        <a href="#home" class="active">Logo</a>
+    
+        <nav class="nav-bar-container">
+            <a class="js-home-page" href="https://nwanodicv.github.io/wdd131/filtered-temples.html">Home</a>
+            <a class="js-old-temples" href="#old-page" onclick="oldTemple()">About</a>
+            <a href="" onclick="newTemple()">Proposal</a>
+            <a href="" onclick="largeTemple()">Winners</a>
+            <a href="" onclick="smallTemple()">Contact</a>
+        </nav>
+        <div>
+            <output class="nav-links-output"></output>
+        </div>
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
     </header>
-    <form method="get" action="review.html">
-        <select>
-            <label>Product Name<option value="" disabled selected>Select a Product...</option></label>
-            <option value="New Cap">New Cap</option>
-        </select>
-        <h3>Overall Rating</h3>
-        <div class="star-rating">
-            <input type="radio" name="stars" id="star-a" value="5"/>
-            <label for="star-a"></label>
-      
-            <input type="radio" name="stars" id="star-b" value="4"/>
-            <label for="star-b"></label>
-        
-            <input type="radio" name="stars" id="star-c" value="3"/>
-            <label for="star-c"></label>
-        
-            <input type="radio" name="stars" id="star-d" value="2"/>
-            <label for="star-d"></label>
-        
-            <input type="radio" name="stars" id="star-e" value="1"/>
-            <label for="star-e"></label>
-      </div>
-            <input type="checkbox" id="todo" name="todo" value="todo">
-            <label for="todo" data-content="Get out of bed">Get out of bed</label>
-      
-
-    </form>
-
-    <label>INPUT: radio, required, common name, altered look with CSS stars</label>
-<div class="stars">
-	<input type="radio" id="fivestar" name="stars" value="5" required><label for="fivestar"></label>
-	<input type="radio" id="fourstar" name="stars" value="4" required><label for="fourstar"></label>
-	<input type="radio" id="threestar" name="stars" value="3" required><label for="threestar"></label>
-	<input type="radio" id="twostar" name="stars" value="2" required><label for="twostar"></label>
-	<input type="radio" id="onestar" name="stars" value="1" required><label for="onestar"></label>
-</div>
-<div class="ref"><a href="https://codepen.io/nevkatz/pen/OJPBBpL" target="_blank">Star Rating Source Pen</a></div>
-<hr>
-<div class="vcentered">
-	<label for="task" data-content="Completed the Module" class="inline">INPUT: checkbox, CSS size</label>
-	<input type="checkbox" id="task" name="task" value="task">
-</div>
-<div class="ref"><a href="https://codepen.io/kathykato/pen/xxGObEp">CheckBox Line Through Source</a></div>
-
-<datalist id="l1">
-	<option>Banana</option>
-	<option>Cherry</option>
-	<option>Apple</option>
-	<option>Strawberry</option>
-	<option>Lemon</option>
-	<option>Orange</option>
-</datalist>
-
+    <main>
+        <form method="get" action="review.html" class="form">
+            <fieldset>
+                <legend>
+                    Product Review
+                </legend>
+                <label>Product Name
+                    <select id="productName" name="Product Name" required>
+                        <option disabled selected>Select a Product...</option>
+                        <option value="new cap">New Cap</option>
+                        <option value=""></option>
+                        <option value=""></option>
+                        <option value=""></option>
+                    </select>
+                </label>
+                <div class="radio-group">
+                    <div>Overall Rating</div>
+                    
+                    <label>
+                        <input type="radio" id="overallRating" name="stars" required>*
+                    </label>
+                    <label>
+                        <input type="radio" id="overallRating" name="stars" required>**
+                    </label>
+                    <label>
+                        <input type="radio" id="overallRating" name="stars" required>***
+                    </label>
+                    <label>
+                        <input type="radio" id="overallRating" name="stars" required>****
+                    </label>
+                    <label>
+                        <input type="radio" id="overallRating" name="stars" required>*****
+                    </label>
+                </div>
+                <div class="installed-date">Date of Installation</div>
+                <label><input type="date" class="date-input"></label>
+                <div class="h4-text">which feature do you find useful in the product?</div>
+                <div class="h5-text">(Check all that apply)</div>
+                <div class="checkbox-area">
+                    <label><input type="checkbox" name="durability" value="yes" required>Durability</label>
+                    <label><input type="checkbox" name="easy of use" value="yes" required>Easy of Use</label>
+                    <label><input type="checkbox" name="performance" value="yes" required>Performance</label>
+                    <label><input type="checkbox" name="design" value="yes" required>Design</label>
+                </div>
+                
+                <div class="text-area">
+                    <div class="input-name">Write Review</div>
+                    <div class="option input-name">(Optional)</div>
+                </div>
+                <textarea placeholder="Text Area" type="text" name="text area" class="input-area" required></textarea>
+                
+                <div class="text-area">
+                    <div class="input-name">Your Name</div>
+                    <div class="option input-name">(Optional)</div>
+                </div>
+                <input placeholder="Enter Your Name" type="text" name="text area" class="input-area" required>
+                <div> <button>Post Review</button></div>
+            </fieldset>
+        </form>
+    </main>
+    
+    <footer>
+        &copy; 2024
+        &copy; Chimezie Victor Nwanodi
+        &copy; Nigeria
+        <p>
+        <span id="last-modification"></span>
+    </footer>
     <script src="scripts/form.js"></script>
 </body>
 </html>

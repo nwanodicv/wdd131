@@ -1,180 +1,384 @@
-
-/* use reverse flexbox to take advantage of flex-direction: reverse */
-.star-rating {
-    display: flex;
-    align-items: center;
-    width: 160px;
-    flex-direction: row-reverse;
-    justify-content: space-between;
-    margin: 40px auto;
-    position: relative;
-  }
-  /* hide the inputs */
-  .star-rating input {
-    display: none;
-  }
-  /* set properties of all labels */
-  .star-rating > label {
-    width: 30px;
-    height: 30px;
-    font-family: Arial;
-    font-size: 30px;
-    transition: 0.2s ease;
-    color: orange;
-  }
-  /* give label a hover state */
-  .star-rating label:hover {
-    color: #ff69b4;
-    transition: 0.2s ease;
-  }
-  .star-rating label:active::before {
-    transform:scale(1.1);
-  }
-  
-  /* set shape of unselected label */
-  .star-rating label::before {
-    content: '\2606';
-    position: absolute;
-    top: 0px;
-    line-height: 26px;
-  }
-  /* set full star shape for checked label and those that come after it */
-  .star-rating input:checked ~ label:before {
-    content:'\2605';
-  }
-  
-  @-moz-document url-prefix() {
-    .star-rating input:checked ~ label:before {
-    font-size: 36px;
-    line-height: 21px;
-    }
-  }  
-  
-
-
-
+/*------Mobile-phone */
+* {
+    margin: 0;
+}
 
 body {
-	font-family: Roboto, Arial, sans-serif;
-	margin: 1rem;
+    font-family: 'roboto', sans-serif;
 }
 
+header, main, footer {
+    max-width: 640px;
+    margin: 1rem;
+    border: 1px solid #bbb;
+    padding: 0.5rem;
+}
+/*.................FORM HERE............*/
 h1 {
-	font-size: 1.75rem;
+	text-align: center;
+}
+
+.form fieldset {
+	background-color:rgb(221, 221, 241);
+	width: 0rem;
+}
+
+.form legend {
+	padding-left: .1rem;
+	font-size: 1.5rem;
 	color: navy;
-	border-bottom: 1px solid #bbb;
 }
 
-hr {
-	margin-bottom: 40px;
-}
-
-label {
+.form select {
 	display: block;
-	font-weight: 700;
+	padding: .75rem;
+	border-radius: 1rem;
 }
 
-input[type=text], input[type=range], input[type=radio] {
-	margin: 1rem;
-	padding: 0.5em;
+.form input[type="radio"] {
+	display: inline-table;
 }
 
-#alpha:focus, #fruit:focus {
-	background-color: #eee;
+.checkbox-area {
+	display: grid;
 }
 
-#alpha:valid, #fruit:valid {
-	background-color: #bed;
-}
-#alpha:invalid, #alpha:invalid {
-	background-color: #fff0f3;
-	border: 1px solid red;
-}
-#alpha:invalid::before {
-	content: "❌";
-}
-
-
-#r {
-	width: 180px;
-	margin-bottom: 0;
-}
-
-#rangevalue {
-	font-size: 2rem;
-	color: navy;
-}
-
-#rangevalues {
-	display: flex;
-	margin: 0 0 0 25px;
-	width: 200px;
-}
-
-#rangevalues option {
-	flex: 1 1 auto;
-}
-
-
-
-/* stars */
-input[type="radio"] {
-	display: none;
-	position: relative;
-	caret-color: rgba(0, 0, 0, 0);
-}
-
-.stars {
-	display: flex;
-	flex-direction: row-reverse;
-	justify-content: left;
-}
-
-.stars > label {
-	color: gold;
-	width: 30px;
-	height: 30px;
-	font-size: 2rem;
-	margin-left: 5px;
-	display: flex;
-	align-items: center;
-	caret-color: rgba(0, 0, 0, 0); /* remove blinking cursor*/
-}
-
-.stars > label:hover {
-	color: #000;
-}
-
-.stars > label::before {
-	content: "\2606";
-}
-
-.stars input:checked ~ label::before {
-	content: "\2605";
-}
-
-
-/* Checkbox *******************************************/
-input[type=checkbox] {
-	margin-left: 10px;
-}
-/* Note the enlargement from the standard, tiny checkbox */
-#task {
-	width: 25px;
-	height: 25px;
-}
-
-.vcentered {
-	display: flex;
-	align-items: center;
-}
-
-/* other */
-.inline {
-	display: inline;
-}
-
-.ref {
-	font-size: 13px;
+.radio-group {
 	margin-top: 1rem;
 }
+
+.installed-date {
+	margin-top: 1rem;
+}
+
+.date-input {
+	width: 14.5rem;
+	padding: .75rem;
+	border-radius: 1rem;
+}
+
+.h4-text {
+	margin-top: 1rem;
+	font-size: 15px;
+}
+
+.h5-text {
+	font-style: italic;
+	font-size: 15px;
+}
+
+.text-area {
+	display: flex;
+}
+
+.option {
+	color: navy;
+}
+
+select {
+	width: 16rem;
+}
+
+.input-name {
+	margin-top: 1rem;
+}
+
+.input-area {
+	width: 16rem;
+	height: 5rem;
+	text-align: center;
+	border-radius: .4rem;
+}
+
+button {
+	margin-top: 1rem;
+	width: 16.5rem;
+	padding: .75rem;
+	border-radius: 1rem;
+	background-color: rgb(55, 55, 233);
+	font-size: 1.5rem;
+	color: white;
+}
+
+
+/*hamburger menu styling  -----------------------*/
+header {
+    position: relative;
+    overflow: hidden;
+    background-color: rgb(55, 55, 233);
+}
+
+
+header a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+}
+
+header .nav-bar-container {
+    display: none;
+    justify-content: space-evenly;
+}
+
+header a.icon {
+    margin-top: 3.2rem;
+    background: rgb(91, 91, 253);
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+header a:hover {
+    background-color: #ddd;
+    color: black;
+}
+
+.active {
+    background-color: #04AA6D;
+    color: white;
+    width: 3rem;
+}
+  
+
+/*-----------------------------------------------------*/
+
+
+
+
+
+a {
+    color: rgb(231, 28, 28);
+    text-decoration: none;
+}
+
+a:hover{
+    color: rgb(34, 2, 34);
+}
+
+main {
+    display: flex;
+    grid-gap: 1rem;
+}
+
+.main-album-container {
+    display: grid;
+    background-color: pink;
+}
+
+.album-container{
+    background-color: gray;
+    display: grid;
+}
+
+caption {
+    text-align: center;
+}
+
+figure {
+    padding: 1rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+img {
+    height: 15rem;
+}
+
+main {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+footer {
+    background-color: rgb(55, 55, 233);;
+    margin-top: 1rem;
+    text-align: center;
+    grid-column: 5 / 1;
+    height: 10vh;
+    color: white;
+}
+
+span {
+    font-size: 10px;
+}
+
+ /* large screen */
+
+ @media screen and (min-width: 500px) {
+
+/*.................FORM HERE............*/
+    h1 {
+    	text-align: center;
+    }
+
+    
+    .form fieldset {
+    	background-color:rgb(221, 221, 241);
+    	width: 100vh;
+    }
+    
+    .form legend {
+    	padding-left: .1rem;
+    	font-size: 1.5rem;
+    	color: navy;
+    }
+    
+    .form select {
+    	display: block;
+    	padding: .75rem;
+    	border-radius: 1rem;
+    }
+    
+    .form input[type="radio"] {
+    	display: inline-table;
+    }
+    
+    .checkbox-area {
+    	display: grid;
+    }
+    
+    .radio-group {
+    	margin-top: 1rem;
+    }
+    
+    .installed-date {
+    	margin-top: 1rem;
+    }
+    
+    .date-input {
+    	width: 28rem;
+    	padding: .75rem;
+    	border-radius: 1rem;
+    }
+    
+    .h4-text {
+    	margin-top: 1rem;
+    	font-size: 15px;
+    }
+    
+    .h5-text {
+    	font-style: italic;
+    	font-size: 15px;
+    }
+    
+    .text-area {
+    	display: flex;
+    }
+    
+    .option {
+    	color: navy;
+    }
+    
+    select {
+    	width: 30rem;
+    }
+    
+    .input-name {
+    	margin-top: 1rem;
+    }
+    
+    .input-area {
+    	width: 30rem;
+    	height: 5rem;
+    	text-align: center;
+    	border-radius: .4rem;
+    }
+
+	.form input[type="radio"] {
+		margin-left: 1rem;
+	}
+    
+    button {
+    	margin-top: 1rem;
+    	width: 30rem;
+    	padding: .75rem;
+    	border-radius: 1rem;
+    	background-color: rgb(55, 55, 233);
+    	font-size: 1.5rem;
+    	color: white;
+    }
+    
+/*............Body Here............*/
+    body {
+        font-family: 'roboto', sans-serif;
+        width: 220vh;
+    }
+
+    header, main, footer {
+        max-width: 1500px;
+        margin: 1rem;
+        border: 1px solid #bbb;
+        padding: 1rem;
+    }
+    
+    header {
+        background-color: rgb(100, 100, 243);
+        color: white;
+    }
+
+    .nav-bar-container {
+        display: flex;
+        margin-left: 8dvb;
+        justify-content: space-evenly;
+    
+    }
+
+    img {
+        height: 12rem;
+    }
+    
+    header a {
+        color: white;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+        display: block;
+    }
+    
+    header .nav-bar-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    
+    header a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+    
+    
+    h2 {
+        text-align: center;
+        margin-left: 37rem;
+    }
+
+    a {
+        color: white;
+        text-decoration: none;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+		width: 105vh;
+		margin-left: 20rem;
+    }
+
+    footer {
+        background-color: rgb(100, 100, 243);
+        margin-top: 1rem;
+        text-align: center;
+        grid-column: 5 / 1;
+        height: 10vh;
+        color: white;
+    }
+    
+    span {
+        font-size: 10px;
+    }
+    
+}
+/*-----------------------------------------------------*/

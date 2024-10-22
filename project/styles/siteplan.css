@@ -106,7 +106,7 @@ nav a {
 }
 
 a {
-  color: var(--nav-link-color);
+  color: var(--nav-hover-background-color);
 }
 
 /*nav a:link, nav a:visited {
@@ -193,6 +193,7 @@ width: 5rem;
 .a-1 {
 margin-right: 2rem;
 text-align: center;
+color: var(--h2-color)
 }
 
 
