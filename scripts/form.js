@@ -26,23 +26,36 @@ const product = [
       averagerating: 5.0
     }
 ];
+
 //..........Inner HTML Here.........
 let productHTML = "";
+//...........Looping on the Products using ".forEach" function........
 product.forEach((item) => {
 
 //..........Generate the HTML..........
     productHTML  += `
-    <select id=${item.id} name=${item.name} required>
-        <option disabled selected>Select a Product...</option>
-        <option value="new cap">New Cap</option>
-        <option value=""></option>
-        <option value=""></option>
-        <option value=""></option>
+    <select id="productName" name="Product Name" required>
+        <option id=${item.id} name=${item.name} disabled selected></option>
+        <option value=${item.id}>${item.name}</option>
+        
     </select>`
-    console.log(productHTML)
 });
 
-document.querySelector('#productName').innerHTML = productHTML
+const outPut = document.querySelector('#productName').innerHTML = productHTML
+ 
+console.log(outPut)
+
+
+//.........Placeholder Here...........
+const inputF = document.querySelector('#productName');
+
+inputF.addEventListener('focus', function() {
+    inputF.placeholder = "Focused - Select a Product...";
+});
+
+inputF.addEventListener('blur', function() {
+    inputF.placeholder = "Default Placeholder";
+});
 
 
 // page datetime last modification
