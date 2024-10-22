@@ -28,19 +28,6 @@ const product = [
 ];
 
 
-let productsNameHTML = "";
-
-productsName.forEach((productName) => {
-    const html = `
-    <label>Product Name
-        <select id="${id}" name="${productName.name}" required>
-            <option disabled selected>Select a Product...</option>
-        </select>
-    </label>`
-    console.log(html)
-})
-
-
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');
 
@@ -60,7 +47,6 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 }`;
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
-
 
 
 
