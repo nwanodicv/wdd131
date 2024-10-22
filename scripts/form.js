@@ -26,6 +26,23 @@ const product = [
       averagerating: 5.0
     }
 ];
+//..........Inner HTML Here.........
+let productHTML = "";
+product.forEach((item) => {
+
+//..........Generate the HTML..........
+    productHTML  += `
+    <select id=${item.id} name=${item.name} required>
+        <option disabled selected>Select a Product...</option>
+        <option value="new cap">New Cap</option>
+        <option value=""></option>
+        <option value=""></option>
+        <option value=""></option>
+    </select>`
+    console.log(productHTML)
+});
+
+document.querySelector('#productName').innerHTML = productHTML
 
 
 // page datetime last modification
