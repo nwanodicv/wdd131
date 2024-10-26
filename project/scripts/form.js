@@ -1,4 +1,4 @@
-import {products} from '../data/products.js'
+import {products} from '.../data/products.js'
 
 //..........Inner HTML Here.........
 let productsHTML = "";
@@ -12,11 +12,10 @@ products.forEach((product) => {
         <option value=${product.id}>${product.name}</option>
         
     </select>`
+    console.log(productsHTML)
 });
 
-const outPut = document.querySelector('#productName').innerHTML = productsHTML
- 
-console.log(outPut)
+document.querySelector('#productName').innerHTML = productsHTML
 
 
 //.........Placeholder Here...........
