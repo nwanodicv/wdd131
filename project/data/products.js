@@ -1,6 +1,6 @@
 //..........Here is an array where products are stored..........
 
-export const products = [{
+const products = [{
     id: '3a6t-a45jd9-7n5j',
 
     image: 'images/computer-chair.jpg',

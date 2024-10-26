@@ -2,6 +2,7 @@
 * {
     margin: 0;
 }
+
 /*...............Color Palette...........*/
 :root {
     --primary-color: #86e646;
@@ -20,7 +21,7 @@
     --h2-color: #5160ec;
     --product-container-color: rgb(243, 237, 237);
 }
-/*.............Body...........*/
+
 body {
     font-family: 'roboto', sans-serif;
 }
@@ -31,7 +32,6 @@ header, main, footer {
     border: 1px solid #bbb;
     padding: 0.5rem;
 }
-
 
 /*hamburger menu styling  -----------------------*/
 header {
@@ -73,8 +73,59 @@ header a:hover {
     color: white;
     width: 3rem;
 }
-  
+/*-----------------------------------------------------*/
 
+.search-input {
+    text-align: center;
+}
+
+.product-img1 {
+    width: 47vh;
+    height: 30vh;
+}
+
+.stars-rating {
+    width: 15vh;
+    height: 4vh;
+}
+
+.product-rating-number {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+.quantity {
+    display: block;
+}
+
+select {
+    margin-top: 5px;
+    width: 3rem;
+}
+
+.product-price {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 100px;
+    margin-top: 5px;
+}
+
+.button-btn {
+    background-color: rgb(247, 247, 10);
+    width: 11rem;
+    height: 2rem;
+    font-weight: 10rem;
+    color: solid black;
+    border: none;
+    border-radius: 1rem;
+    margin-top: .5rem;
+    margin-bottom: 20px;
+    margin-left: 3rem;
+}
+
+.button :hover{
+    background-color: rgb(211, 92, 23);
+}
 /*-----------------------------------------------------*/
 
 /*..............Footer...........*/
