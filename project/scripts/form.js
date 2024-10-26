@@ -1,47 +1,20 @@
-const product = [
-
-    {
-      id: "fc-1888",
-      name: "flux capacitor",
-      averagerating: 4.5
-    },
-    {
-      id: "fc-2050",
-      name: "power laces",
-      averagerating: 4.7
-    },
-    {
-      id: "fs-1987",
-      name: "time circuits",
-      averagerating: 3.5
-    },
-    {
-      id: "ac-2000",
-      name: "low voltage reactor",
-      averagerating: 3.9
-    },
-    {
-      id: "jj-1969",
-      name: "warp equalizer",
-      averagerating: 5.0
-    }
-];
+import {products} from '../data/products.js'
 
 //..........Inner HTML Here.........
-let productHTML = "";
+let productsHTML = "";
 //...........Looping on the Products using ".forEach" function........
-product.forEach((item) => {
+products.forEach((product) => {
 
 //..........Generate the HTML..........
-    productHTML  += `
+    productsHTML  += `
     <select id="productName" name="Product Name" required>
-        <option id=${item.id} name=${item.name} disabled selected></option>
-        <option value=${item.id}>${item.name}</option>
+        <option id=${product.id} name=${product.name} disabled selected></option>
+        <option value=${product.id}>${product.name}</option>
         
     </select>`
 });
 
-const outPut = document.querySelector('#productName').innerHTML = productHTML
+const outPut = document.querySelector('#productName').innerHTML = productsHTML
  
 console.log(outPut)
 
