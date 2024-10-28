@@ -38,10 +38,7 @@ product.forEach((item) => {
       <option id=${item.id} name=${item.name} disabled selected></option>
       <option value=${item.id}>${item.name}</option>
     <div>
-    <div> 
-        <button data-item-name="${item.name}"><a href="https://nwanodicv.github.io/wdd131/form-thanks.html">Post Review</a></button>
-                
-    </div>`
+    `
 });
 
 const outPut = document.querySelector('#productName').innerHTML = productHTML
@@ -58,6 +55,28 @@ inputF.addEventListener('blur', function() {
     inputF.placeholder = "Default Placeholder";
 });
 
+//..........Hamburger Here..............
+
+function myFunction() {
+	const x = document.querySelector(".nav-bar-container");
+	if (x.style.display === "block") {
+	  x.style.display = "none";
+	} else {
+	  x.style.display = "block";
+	}
+  }
+
+ //..............Local Storage........... 
+  clickCounter();
+
+  function clickCounter() {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    document.querySelector(".js-cart-quantity").innerHTML = localStorage.clickcount;
+  }
 
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');
@@ -81,73 +100,52 @@ lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
 
 //..............Cart Here................
 
-const cart = [{
-
-}]
-cart.push(product);
-
-function addToCart(name) {
-  //   the code below is to increase the quantity of one product   
-  let matchingItem = '';
-
-  cart.forEach((cartItem) => {
-      if (name === cartItem.name) {
-          matchingItem = cartItem;
-      }
-
-      console.log(matchingItem)
-  });
-
-  if (matchingItem) {
-    matchingItem.quantity += 1;
-}else{
-    cart.push({
-        name: name,
-        quantity: 1,
-    });
-}
-}
-
-
-function updateproductReview() {
-  //The code below shows the total number of products in the cart
-  let productReview = 0;
-  product.forEach((cartItem) => {
-    productReview += cartItem.quantity
-  });
-  const productsReview = document.querySelector('.js-cart-quantity')
-productsReview.innerHTML = productReview
-};
-
-// Below here we make the button interactive by using EventListener
-document.querySelectorAll('.js-add-to-cart')
-  .forEach((button) => {
-      button.addEventListener('click', () => {
-        "hello world"
-          const name = button.dataset.productId;
-          addToCart(name)
-          updateproductReview()
-          
-      });
-  });
-
-
-
-
-
-
-
-  
-
-
-
-//..........Hamburger Here..............
-
-  function myFunction() {
-	const x = document.querySelector(".nav-bar-container");
-	if (x.style.display === "block") {
-	  x.style.display = "none";
-	} else {
-	  x.style.display = "block";
-	}
-  }
+//const cart = [{
+//
+//}]
+//cart.push(product);
+//
+//function addToCart(name) {
+//  //   the code below is to increase the quantity of one product   
+//  let matchingItem = '';
+//
+//  cart.forEach((cartItem) => {
+//      if (name === cartItem.name) {
+//          matchingItem = cartItem;
+//      }
+//
+//      console.log(matchingItem)
+//  });
+//
+//  if (matchingItem) {
+//    matchingItem.quantity += 1;
+//}else{
+//    cart.push({
+//        name: name,
+//        quantity: 1,
+//    });
+//}
+//}
+//
+//
+//function updateproductReview() {
+//  //The code below shows the total number of products in the cart
+//  let productReview = 0;
+//  product.forEach((cartItem) => {
+//    productReview += cartItem.quantity
+//  });
+//  const productsReview = document.querySelector('.js-cart-quantity')
+//productsReview.innerHTML = productReview
+//};
+//
+//// Below here we make the button interactive by using EventListener
+//document.querySelectorAll('.js-add-to-cart')
+//  .forEach((button) => {
+//      button.addEventListener('click', () => {
+//        "hello world"
+//          const name = button.dataset.productId;
+//          addToCart(name)
+//          updateproductReview()
+//          
+//      });
+//  });

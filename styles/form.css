@@ -248,34 +248,7 @@ span {
 
  @media screen and (min-width: 500px) {
 
-    /*.............Cart Here.............*/
-
-    .cart-container {
-        width: 5rem;
-        height: 1rem;
-        margin-left: 70rem;
-    }
-
-    .cart-link {
-        display: block;
-    }
-
-    .cart-quantity {
-        font-size: .8rem;
-        margin-left: 1rem;
-        padding-bottom: 6rem;
-    }
-
-    .cart-icon {
-        margin-right: 3rem;
-        width: 2rem;
-        height: 1rem;
-    }
-
-    .cart-text {
-        padding-bottom: 2rem;
-        margin-bottom: 2rem;
-    }
+   
 
 /*.................FORM HERE............*/
     h1 {
