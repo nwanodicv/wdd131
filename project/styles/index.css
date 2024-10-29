@@ -168,12 +168,13 @@ select {
     display: grid;
     row-gap: 3rem;
     grid-template-columns: auto;
-    margin-left: .4rem;
+    margin-left: 2rem;
     
 }
 
 .product-container {
-    background-color: var(--product-container-color);
+    background-color: rgb(247, 241, 241);
+    width: 13.1rem;
   }
 
 
@@ -182,7 +183,7 @@ select {
 }
 
 .product-img1 {
-    width: 44vh;
+    width: 40vh;
     height: 30vh;
     
 
@@ -194,7 +195,7 @@ select {
 }
 
 .product-rating-number {
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     margin-left: 1rem;
 }
 
@@ -223,8 +224,8 @@ select {
     border: none;
     border-radius: 1rem;
     margin-top: .5rem;
-    margin-bottom: 20px;
-    margin-left: 3rem;
+    margin-bottom: 8px;
+    margin-left: 1rem;
 }
 
 
