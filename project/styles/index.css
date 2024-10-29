@@ -19,7 +19,7 @@
     --nav-hover-background-color: #1111a3;
     --h4-color: rgb(7, 7, 7);
     --h2-color: #5160ec;
-    --product-container-color: rgb(243, 237, 237);
+    --product-container-color: rgb(253, 253, 253);
 }
 
 body {
@@ -84,6 +84,10 @@ header a:hover {
     height: 30vh;
 }
 
+.product-rating-star {
+    display: flex;
+}
+
 .stars-rating {
     width: 15vh;
     height: 4vh;
@@ -130,10 +134,10 @@ select {
 /*.............Cart Here.............*/
 
 .cart-container {
-    margin-left: 11rem;
+    margin-left: 10rem;
     width: 5rem;
     height: 1rem;
-    margin-bottom: 1.7rem;
+    margin-bottom: 1.9rem;
 }
 
 .cart-link {
@@ -158,6 +162,8 @@ select {
     margin-bottom: 2rem;
 }/*.................................*/
 
+ /*..........Product style..............*/
+
 .products-grid {
     display: grid;
     row-gap: 3rem;
@@ -169,6 +175,58 @@ select {
 .product-container {
     background-color: var(--product-container-color);
   }
+
+
+.search-input {
+    text-align: center;
+}
+
+.product-img1 {
+    width: 44vh;
+    height: 30vh;
+    
+
+}
+
+.stars-rating {
+    width: 10vh;
+    height: 4vh;
+}
+
+.product-rating-number {
+    font-size: 1.3rem;
+    margin-left: 1rem;
+}
+
+.quantity {
+    display: block;
+}
+
+select {
+    margin-top: 5px;
+    width: 3rem;
+}
+
+.product-price {
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 100px;
+    margin-top: 5px;
+}
+
+.button-btn {
+    background-color: rgb(247, 247, 10);
+    width: 11rem;
+    height: 2rem;
+    font-weight: 10rem;
+    color: solid black;
+    border: none;
+    border-radius: 1rem;
+    margin-top: .5rem;
+    margin-bottom: 20px;
+    margin-left: 3rem;
+}
+
 
 
 /*..............Footer...........*/
@@ -210,8 +268,7 @@ span {
     /*.............Cart Here.............*/
 
 .cart-container {
-    margin-left: 74rem;
-    width: 5rem;
+    margin-left: 60rem;
     height: 1rem;
     margin-bottom: 1.7rem;
 }
@@ -242,7 +299,7 @@ span {
     .products-grid {
         display: grid;
         column-gap: 10px;
-        row-gap: 20rem;
+        row-gap: 3rem;
         grid-template-columns: auto auto auto auto;
         margin-left: 2rem;
         
@@ -257,7 +314,7 @@ span {
   
     .product-container {
       border-style: 1px solid gray;
-      width: 18rem;
+      width: 15.2rem;
       height: 23.5rem;
       column-gap: 2rem;
       background-color: var(--product-container-color);
@@ -325,7 +382,7 @@ span {
 }
 
 .product-img1 {
-    width: 47vh;
+    width: 40vh;
     height: 30vh;
 }
 
@@ -365,7 +422,7 @@ select {
     border-radius: 1rem;
     margin-top: .5rem;
     margin-bottom: 20px;
-    margin-left: 3rem;
+    margin-left: 1.9rem;
 }
 
 .button :hover{
