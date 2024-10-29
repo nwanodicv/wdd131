@@ -214,30 +214,71 @@ products.forEach((product) => {
                 </select>
             </div>
             <div>
-                <button class="button-btn js-add-to-cart">Add to Cart</button>
+                <button data-product-id="${product.id}" class="button-btn js-add-to-cart">Add to Cart</button>
             </div>
         </div>`
 });
 
 document.querySelector('.js-product-grid').innerHTML = productsHTML;
 
-//.........Placeholder Here...........
-const inputF = document.querySelector('#productName');
+//................Cart Array.........
+const cart = [{
+    productId: '3a6t-a45jd9-7n5j',
+    quantity: 0,
+}, {
+    productId: 'j59he-gkrcmi-sfldn',
+    quantity: 0,
+}];
+function addToCart(productId) {
+    //   the code below is to increase the quantity of one product   
+    let matchingItem = '';
 
-inputF.addEventListener('focus', function() {
-    inputF.placeholder = "Focused - Select a Product...";
-});
+    cart.forEach((cartItem) => {
+        if (productId === cartItem.productName) {
+            matchingItem = cartItem;
+        }
+    });
 
-inputF.addEventListener('blur', function() {
-    inputF.placeholder = "Default Placeholder";
-});
+    if (matchingItem) {
+        matchingItem.quantity += 1;
+    }else{
+        cart.push({
+            productId: productId,
+            quantity: 1,
+        });
+    }
+};
+
+
+
+function updateCartQuantity() {
+    //The code below shows the total number of products in the cart
+    let cartQuantity = 0;
+
+    cart.forEach((cartItem) => {
+        cartQuantity += cartItem.quantity;
+    });
+    document.querySelector('.js-cart-quantity').
+innerHTML = cartQuantity;
+};
+// Below here we make the button interactive by using EventListener
+document.querySelectorAll('.js-add-to-cart')
+    .forEach((button) => {
+        button.addEventListener('click', () => {
+            const productId = button.dataset.productId;
+
+            console.log(productId)
+            addToCart(productId)
+            updateCartQuantity()
+            
+        });
+    });
 
 
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');
 
 lastModified.innerHTML = "";
-
 
 // returns: Tuesday, December 16, 2017 11:09:42
 let oLastModif = new Date(document.lastModified);

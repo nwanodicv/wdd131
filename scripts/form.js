@@ -75,7 +75,8 @@ function myFunction() {
     } else {
       localStorage.clickcount = 1;
     }
-    document.querySelector(".js-cart-quantity").innerHTML = localStorage.clickcount;
+    let localstorage = document.querySelector(".js-cart-quantity").innerHTML = localStorage.clickcount;
+    console.log(localstorage)
   }
 
 // page datetime last modification

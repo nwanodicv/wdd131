@@ -185,18 +185,16 @@ products.forEach((product) => {
 
 //..........Generate the HTML..........
     productsHTML  += `
-    <select id="productName" name="Product Name" required>
-        <option id=${product.id} name="Select a product" disabled selected></option>
-        <option value=${product.id}>${product.name}</option>
-        
-        
-    </select>`
-    console.log(productsHTML)
+    <div>
+      <option id=${product.id} name=${product.name} disabled selected></option>
+      <option value=${product.id}>${product.name}</option>
+    <div>
+    `
 });
 
-document.querySelector('#productName').innerHTML = productsHTML
+const outPut = document.querySelector('#productName').innerHTML = productsHTML
 
-
+console.log(outPut)
 //.........Placeholder Here...........
 const inputF = document.querySelector('#productName');
 
@@ -208,11 +206,34 @@ inputF.addEventListener('blur', function() {
     inputF.placeholder = "Default Placeholder";
 });
 
+//..........Hamburger Here..............
+
+function myFunction() {
+	const x = document.querySelector(".nav-bar-container");
+	if (x.style.display === "block") {
+	  x.style.display = "none";
+	} else {
+	  x.style.display = "block";
+	}
+  }
+
+ //..............Local Storage........... 
+  clickCounter();
+
+  function clickCounter() {
+    if (localStorage.clickcount) {
+      localStorage.clickcount = Number(localStorage.clickcount)+1;
+    } else {
+      localStorage.clickcount = 1;
+    }
+    let localstorage = document.querySelector(".js-cart-quantity").innerHTML = localStorage.clickcount;
+    console.log(localstorage)
+  }
 
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');
 
-lastModified.innerHTML = "";
+lastModified.innerHTML = ""
 
 
 // returns: Tuesday, December 16, 2017 11:09:42
@@ -228,14 +249,3 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 }`;
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
-
-
-
-  function myFunction() {
-	const x = document.querySelector(".nav-bar-container");
-	if (x.style.display === "block") {
-	  x.style.display = "none";
-	} else {
-	  x.style.display = "block";
-	}
-  }
