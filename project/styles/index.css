@@ -86,10 +86,7 @@ header a:hover {
     text-align: center;
 }
 
-.product-img1 {
-    width: 47vh;
-    height: 30vh;
-}
+
 
 .product-rating-star {
     display: flex;
