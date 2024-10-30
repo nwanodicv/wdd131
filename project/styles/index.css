@@ -29,7 +29,7 @@ body {
 
 header, main, footer {
     max-width: 640px;
-    width: 20.5rem;
+    width: 24.5rem;
     margin: 1rem;
     border: 1px solid #bbb;
     padding: 0.5rem;
@@ -140,7 +140,7 @@ select {
 .cart-container {
     width: 5rem;
     height: 1rem;
-    margin-left: 3rem;
+    margin-left: 9rem;
 }
 
 .cart-link {
@@ -177,7 +177,7 @@ select {
 
 .product-container {
     background-color: rgb(247, 241, 241);
-    width: 20rem;
+    width: 24rem;
   }
 
 
@@ -187,8 +187,8 @@ select {
 }
 
 .product-img1 {
-    width: 15rem;
-    height: 30vh;
+    width: 24rem;
+    height: 20rem;
     
 
 }
@@ -222,7 +222,7 @@ select {
 
 .button-btn {
     background-color: rgb(247, 247, 10);
-    width: 8rem;
+    width: 23rem;
     height: 2rem;
     font-weight: 10rem;
     color: solid black;
