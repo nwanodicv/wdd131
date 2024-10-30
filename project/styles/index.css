@@ -29,7 +29,7 @@ body {
 
 header, main, footer {
     max-width: 640px;
-    width: 13.5rem;
+    width: 14rem;
     margin: 1rem;
     border: 1px solid #bbb;
     padding: 0.5rem;
@@ -180,7 +180,7 @@ select {
 
 .product-container {
     background-color: rgb(247, 241, 241);
-    width: 12rem;
+    width: 13rem;
   }
 
 
@@ -190,7 +190,7 @@ select {
 }
 
 .product-img1 {
-    width: 12rem;
+    width: 13rem;
     height: 30vh;
     
 
@@ -391,6 +391,7 @@ span {
 
 .search-input {
     text-align: center;
+    width: 5rem;
 }
 
 .product-img1 {
