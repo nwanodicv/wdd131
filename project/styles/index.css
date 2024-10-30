@@ -29,7 +29,7 @@ body {
 
 header, main, footer {
     max-width: 640px;
-    width: 14rem;
+    width: 14.5rem;
     margin: 1rem;
     border: 1px solid #bbb;
     padding: 0.5rem;
@@ -177,7 +177,7 @@ select {
 
 .product-container {
     background-color: rgb(247, 241, 241);
-    width: 13rem;
+    width: 14rem;
   }
 
 
