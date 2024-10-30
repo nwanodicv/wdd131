@@ -1,6 +1,7 @@
 /*------Mobile-phone */
 * {
     margin: 0;
+    max-width: 640px;
 }
 
 /*...............Color Palette...........*/
@@ -28,6 +29,7 @@ body {
 
 header, main, footer {
     max-width: 640px;
+    width: 13.5rem;
     margin: 1rem;
     border: 1px solid #bbb;
     padding: 0.5rem;
@@ -38,6 +40,10 @@ header {
     position: relative;
     overflow: hidden;
     background-color: var(--accent1-color);
+}
+
+.logo-cart {
+    display: flex;
 }
 
 
@@ -69,9 +75,10 @@ header a:hover {
 }
 
 .active {
-    background-color: #04AA6D;
+    background-color: var(--accent1-color);
     color: white;
-    width: 3rem;
+    width: 1.5rem;
+    height: 2rem;
 }
 /*-----------------------------------------------------*/
 
@@ -134,10 +141,9 @@ select {
 /*.............Cart Here.............*/
 
 .cart-container {
-    margin-left: 10rem;
     width: 5rem;
     height: 1rem;
-    margin-bottom: 1.9rem;
+    margin-left: 3rem;
 }
 
 .cart-link {
@@ -168,22 +174,23 @@ select {
     display: grid;
     row-gap: 3rem;
     grid-template-columns: auto;
-    margin-left: 2rem;
+    margin-left: .7rem;
     
 }
 
 .product-container {
     background-color: rgb(247, 241, 241);
-    width: 13.1rem;
+    width: 12rem;
   }
 
 
 .search-input {
     text-align: center;
+    width: 3rem;
 }
 
 .product-img1 {
-    width: 40vh;
+    width: 12rem;
     height: 30vh;
     
 
@@ -215,17 +222,16 @@ select {
     margin-top: 5px;
 }
 
+
 .button-btn {
     background-color: rgb(247, 247, 10);
-    width: 11rem;
+    width: 8rem;
     height: 2rem;
     font-weight: 10rem;
     color: solid black;
     border: none;
     border-radius: 1rem;
-    margin-top: .5rem;
-    margin-bottom: 8px;
-    margin-left: 1rem;
+    margin-left: 0rem;
 }
 
 
@@ -264,6 +270,11 @@ span {
   
     body {
       font-family: var(--paragraph-font);
+    }
+
+    .active {
+        background-color: var(--accent1-color);
+        color: white;
     }
 
     /*.............Cart Here.............*/

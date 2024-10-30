@@ -213,7 +213,7 @@ products.forEach((product) => {
                     <option value="10">10</option>
                 </select>
             </div>
-            <div>
+            <div class="button-div">
                 <button data-product-id="${product.id}" class="button-btn js-add-to-cart">Add to Cart</button>
             </div>
         </div>`
