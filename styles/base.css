@@ -7,13 +7,14 @@
 
 header, footer, .about-me {
     background-color: rgb(72, 72, 230);
+    width: 100%;
 }
 
 body {
     border-top-color: black;
     display: grid;
     grid-template-columns: 1fr auto 8px 300px;
-    width: 98vw;
+    width: 80vw;
     height: 100vh,
 }
 
@@ -27,6 +28,7 @@ header {
 
 main {
     display: flex;
+    margin-left: 9rem;
 }
 
 .nav-bar-container {
@@ -55,16 +57,23 @@ a:visited {
 }
 
 .left-sidebar {
+    border-style: ridge;
     background-color: white;
     grid-column: 3 / 1;
     height: 80vh;
+    border-radius: 0.5rem;
 }
 
 .right-sidebar {
-    box-shadow: 1px;
+    border-style: ridge;
     background-color: white;
     margin-left: 1rem;
-    width: 10rem;
+    border-radius: 0.5rem;;
+}
+
+.web-resources-container {
+    margin-top: 5rem;
+    margin-left: 1rem;
 }
 
 .about-me {
@@ -79,12 +88,15 @@ a:visited {
     color:white;
     border-radius: 0.2rem;
     text-align: center;
-    width: 29.3rem;
 }
 
 .about-me-container {
     display: flex;
     height: 2rem;
+}
+
+.profile-image-container {
+    margin-right: 8rem;
 }
 
 .profile-pcs {
@@ -97,7 +109,7 @@ a:visited {
 }
 
 p {
-    width: 30rem;
+    width: 25rem;
     padding-top: 2rem;
 }
 
