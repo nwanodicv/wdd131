@@ -1,5 +1,16 @@
 @media screen and (min-width: 500px) {
 
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: 'roboto', sans-serif;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'roboto', sans-serif;
+    }
+
     header, main, footer {
         max-width: 1500px;
         margin: 1rem;
@@ -30,13 +41,17 @@
         text-decoration: none;
     }
 
+    a:hover{
+        text-decoration: underline;
+    }
+
     main {
         grid-template-columns: auto 3/1 auto;
     }
 
     .main-album-container {
         background-color: white;
-        margin-left: 14rem;
+        margin-left: 10rem;
     }
     
     .album-container{
@@ -48,6 +63,13 @@
         display: grid;
         padding: 1rem;
         background-color: #fff;
+    }
+    
+    img {
+        width: 300px;
+        height: 200px;
+        border: 1px solid #bbb;
+        border-radius: 5px;
     }
 
     footer {

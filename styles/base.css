@@ -39,10 +39,6 @@ main {
     height: 1.5rem;
 }
 
-.nav-bar-li {
-    list-style: none;
-}
-
 
 a {
     color: white;
@@ -51,7 +47,11 @@ a {
 }
 
 a:hover {
-    color: rgb(245, 11, 11);
+    text-decoration: underline;
+}
+
+a:visited {
+    color: purple;
 }
 
 .left-sidebar {
@@ -129,19 +129,15 @@ caption {
     font-size: 2px;
 }
 
-ul {
+li {
     display: grid;
-    padding-top: 6rem;
+    padding-top: 1rem;
 }
 
 .li-a {
     color: blue;
     cursor: pointer;
     width: 20rem;
-}
-
-.li-a :visited {
-    color: rgb(233, 103, 125);
 }
 
 footer {
