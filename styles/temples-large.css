@@ -23,17 +23,15 @@
         color: white;
     }
 
-    .nav-bar-container {
-        display: flex;
-        margin-left: 20rem;
-        justify-content: space-evenly;
-    
+    #menu-button {
+        display: none; /* hide hamburger button */
     }
 
-    h2 {
-        text-align: center;
-        margin-left: 10rem;
-        
+    .nav-bar-container {
+        display: flex !important; /* force always visible */
+        flex-direction: row;
+        justify-content: space-evenly;
+        margin-left: 20rem;
     }
 
     a {
@@ -46,13 +44,25 @@
     }
 
     main {
-        grid-template-columns: auto 3/1 auto;
+        grid-template-columns: 3fr 1fr;
+        display: grid;
+        grid-gap: 1rem;
+        margin-top: 1rem;
+        margin-left: 5rem;
+        margin-right: 5rem;
     }
 
     .main-album-container {
         background-color: white;
-        margin-left: 10rem;
+        margin-left: 3rem;
     }
+
+    figcaption {
+        text-align: center;
+        font-weight: bold;
+        width: 15rem;
+        margin: 1 auto;
+   }
     
     .album-container{
         display: flex;
@@ -66,10 +76,12 @@
     }
     
     img {
-        width: 300px;
-        height: 200px;
+        width: 20rem;
+        height: 20rem;
         border: 1px solid #bbb;
         border-radius: 5px;
+        display: block;
+        
     }
 
     footer {
