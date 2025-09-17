@@ -33,7 +33,7 @@ main {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  background-image: url(../images/wild.jpg);
+  /*background-image: url(../images/hero-large.webp);*/
   background-size: cover;
   background-position: center;
   padding: 1rem;
@@ -75,19 +75,24 @@ section {
 
 /* Large Screen */
 @media screen and (min-width: 600px) {
-  main {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1rem;
-  }
-
-  section {
-    width: 15rem;
-    margin-right: 20rem;
-    opacity: 0.8;
-  }
-
-  .information h3 {
-    font-size: 1rem;
-  }
+    h1::after {
+        content: " 😊"; /* emoticon appears only in wide view */
+        font-size: 1.5rem;
+        margin-left: 0.5rem;
+     }
+    main {
+       display: grid;
+       grid-template-columns: 1fr 1fr;
+       gap: 1rem;
+    }
+  
+    section {
+       width: auto;
+       margin-right: 0;
+       opacity: 0.8;
+    }
+  
+    .information h3 {
+       font-size: 1rem;
+    }
 }

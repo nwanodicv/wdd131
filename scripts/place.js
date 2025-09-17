@@ -7,15 +7,8 @@ lastModified.innerHTML = `Last Modified: ${new Intl.DateTimeFormat(
 ).format(nLastModif)}`;
 
 // Wind Chill Calculation
-function calculateWindChill(tempC, windKmh) {
-  if (tempC <= 10 && windKmh > 4.8) {
-    return (
-      13.12 + 0.6215 * tempC - 11.37 * Math.pow(windKmh, 0.16) + 
-      0.3965 * tempC * Math.pow(windKmh, 0.16)
-    ).toFixed(1);
-  } else {
-    return "N/A";
-  }
+function calculateWindChill(t, s) {
+    return (t <= 50 && s > 3) ? (35.74 + 0.6215*t - 35.75*s**0.16 + 0.4275*t*s**0.16).toFixed(1) : t;
 }
 
 // Example Weather Data
@@ -28,7 +21,7 @@ document.querySelector('.js-wind-chill-container').innerHTML = `
   <div class="weather-container">
     <h1 class="background-color">Weather</h1>
     <div class="wind-chill-factor-container">
-      <img class="wind-chill-factor" src="images/weather-forecast-icon.webp" alt="Weather forecast icon">
+      <img class="wind-chill-factor" src="images/weather-icon.svg" alt="Weather forecast icon">
     </div>
     <div class="information"> 
       <h3>Temperature: ${temp}°C</h3>
