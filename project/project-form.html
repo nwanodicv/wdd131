@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,6 +16,11 @@
 </head>
 <body>
     <header>
+        <img src="images/Fuji_Gaming.jpg" alt="logo" class="logo">
+        <h1>Product Review</h1>
+        <div>
+            <input type="search" placeholder="Search" class="search-input js-search-input">
+        </div>
         <div class="cart-container">
             <a class="cart-link header-link" href="#">
                 <span class="cart-quantity js-cart-quantity">0</span>
@@ -22,23 +28,24 @@
                 <div class="cart-text">Cart</div>
             </a>
         </div>
-        <h1>Product Review</h1>
-        <a href="#home" class="active">Logo</a>
-    
-        <nav class="nav-bar-container">
-            <a class="js-home-page" href="">Home</a>
-            <a class="js-old-temples" href="#old-page" onclick="oldTemple()">About</a>
-            <a href="" onclick="newTemple()">Proposal</a>
-            <a href="" onclick="largeTemple()">Winners</a>
-            <a href="" onclick="smallTemple()">Contact</a>
-        </nav>
         <div>
             <output class="nav-links-output"></output>
         </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
+        <div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div>
+            <nav class="nav-bar-container">
+                <li><a class="js-home-page" href="">Home</a></li>
+                <li><a class="js-old-temples" href="#old-page" onclick="oldTemple()">About</a></li>
+                <li><a href="" onclick="newTemple()">Proposal</a></li>
+                <li><a href="" onclick="largeTemple()">Winners</a></li>
+                <li><a href="" onclick="smallTemple()">Contact</a></li>
+            </nav>
+        </div>
     </header>
     <main>
         <form method="get" action="review.html" class="form">

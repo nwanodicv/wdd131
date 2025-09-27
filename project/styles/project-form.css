@@ -3,22 +3,6 @@
     margin: 0;
 }
 
- :root {
-    --primary-color: #86e646;
-    --secondary-color: #894857;
-    --accent1-color: #759930;
-    --accent2-color: #508374;
-
-    --heading-font: 'sans', serif;
-    --paragraph-font: 'sans', serif;
-
-    --nav-background-color: #873936;
-    --nav-link-color: #f0f0ee;
-    --nav-hover-link-color: #256847;
-    --nav-hover-background-color: #1111a3;
-    --h4-color: rgb(7, 7, 7);
-    --h2-color: #5160ec;
-}
 
 body {
     font-family: 'roboto', sans-serif;
@@ -48,7 +32,7 @@ h1 {
     margin-bottom: 1rem;
 	padding-left: .1rem;
 	font-size: 1.3rem;
-	color: navy;
+	color: rgb(243, 146, 162);
 }
 
 .form select {
@@ -95,7 +79,7 @@ h1 {
 }
 
 .option {
-	color: navy;
+	color: rgb(243, 146, 162);
 }
 
 select {
@@ -128,7 +112,6 @@ button {
 header {
     position: relative;
     overflow: hidden;
-    background-color: var( --accent1-color)
 }
 
 
@@ -147,23 +130,18 @@ header .nav-bar-container {
 
 header a.icon {
     margin-top: 3.2rem;
-    background: rgb(91, 91, 253);
     display: block;
     position: absolute;
     right: 0;
     top: 0;
 }
 
-header a:hover {
-    background-color: #ddd;
-    color: black;
+a:hover {
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
 }
 
-.active {
-    background-color: #04AA6D;
-    color: white;
-    width: 3rem;
-}/*-----------------------------------------------------*/
+/*-----------------------------------------------------*/
 
 
 
@@ -175,7 +153,8 @@ a {
 }
 
 a:hover{
-    color: rgb(34, 2, 34);
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
 }
 
 main {
@@ -185,7 +164,7 @@ main {
 
 .main-album-container {
     display: grid;
-    background-color: pink;
+    background-color: rgb(128, 0, 128);
 }
 
 .album-container{
@@ -264,8 +243,98 @@ span {
 }
 
  @media screen and (min-width: 500px) {
+    /*............Body Here............*/
+    body {
+        font-family: 'roboto', sans-serif;
+        width: 220vh;
+    }
 
-   
+    header, main, footer {
+        max-width: 1500px;
+        margin: 1rem;
+        border: 1px solid #bbb;
+        padding: 1rem;
+    }
+    
+    header {
+        background-color: rgb(128, 0, 128);
+        color: white;
+    }
+
+    .nav-bar-container {
+        display: flex;
+        margin-left: 8dvb;
+        justify-content: space-evenly;
+    
+    }
+    
+    header .nav-bar-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    
+    h2 {
+        text-align: center;
+        margin-left: 37rem;
+    }
+
+    main {
+        display: grid;
+        grid-template-columns: 1fr;
+		width: 105vh;
+		margin-left: 20rem;
+    }
+
+   .logo {
+        width: 3rem;
+        height: 3rem;
+       
+    }
+     /*.............Cart Here.............*/
+
+    .cart-container {
+        margin-left: 75rem;
+    }
+    
+    .cart-link {
+        display: block;
+    }
+    
+    .cart-quantity {
+        font-size: .8rem;
+        margin-left: 1rem;
+        padding-bottom: 6rem;
+    }
+    
+    .cart-icon {
+        margin-right: 3rem;
+        width: 2rem;
+        height: 1.5rem;
+        color: rgb(128, 0, 128);
+    }
+    
+    .cart-text {
+        display: none;
+        padding-bottom: 2rem;
+        margin-bottom: 2rem;
+    }/*.................................*/
+
+    .search-input {
+        text-align: center;
+        width: 20rem;
+        margin-left: 30.5rem;
+        margin-top: 1rem;
+        border-radius: 1rem;
+    }
+
+    li{
+        list-style: none;
+    }
+
+    a:hover {
+        font-size: 1.2rem;
+    }
 
 /*.................FORM HERE............*/
     h1 {
@@ -281,7 +350,7 @@ span {
     .form legend {
     	padding-left: .1rem;
     	font-size: 1.5rem;
-    	color: navy;
+    	color: rgb(128, 0, 128);
     }
     
     .form select {
@@ -327,7 +396,7 @@ span {
     }
     
     .option {
-    	color: navy;
+    	color: rgb(128, 0, 128);
     }
     
     select {
@@ -355,79 +424,13 @@ span {
     	width: 30rem;
     	padding: .75rem;
     	border-radius: 1rem;
-    	background-color: rgb(55, 55, 233);
+    	background-color: rgb(128, 0, 128);
     	font-size: 1.5rem;
     	color: white;
     }
-    
-/*............Body Here............*/
-    body {
-        font-family: 'roboto', sans-serif;
-        width: 220vh;
-    }
-
-    header, main, footer {
-        max-width: 1500px;
-        margin: 1rem;
-        border: 1px solid #bbb;
-        padding: 1rem;
-    }
-    
-    header {
-        background-color: rgb(100, 100, 243);
-        color: white;
-    }
-
-    .nav-bar-container {
-        display: flex;
-        margin-left: 8dvb;
-        justify-content: space-evenly;
-    
-    }
-
-    img {
-        height: 12rem;
-    }
-    
-    header a {
-        color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
-    }
-    
-    header .nav-bar-container {
-        display: flex;
-        justify-content: space-evenly;
-    }
-    
-    
-    header a:hover {
-        background-color: #ddd;
-        color: black;
-    }
-    
-    
-    h2 {
-        text-align: center;
-        margin-left: 37rem;
-    }
-
-    a {
-        color: white;
-        text-decoration: none;
-    }
-
-    main {
-        display: grid;
-        grid-template-columns: 1fr;
-		width: 105vh;
-		margin-left: 20rem;
-    }
 
     footer {
-        background-color: rgb(100, 100, 243);
+        background-color: rgb(128, 0, 128);
         margin-top: 1rem;
         text-align: center;
         grid-column: 5 / 1;
@@ -440,4 +443,4 @@ span {
     }
     
 }
-/*-----------------------------------------------------*/
+/*---------------------------------------------

@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>My Project</title>
     <meta name="description" content="Project activity home page">
-    <meta name="author" content="Chimezie Victor Nwanodi">
+    <meta name="author" content="Chimezie Victor Stephen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="" href="https://fonts.googleapis.com/css2?family=roboto&display=swap" rel="stylesheet">
@@ -15,34 +15,35 @@
 </head>
 <body>
     <header>
-        <div class="logo-cart">
-            <a href="#home" class="active">Logo</a>
-            <div class="cart-container">
-                <a class="cart-link header-link" href="#">
-                    <span class="cart-quantity js-cart-quantity">0</span>
-                    <img class="cart-icon" src="images/cart-emoji.png">
-                    <div class="cart-text">Cart</div>
-                </a>
-            </div>
-        </div>
-        
+        <img src="images/Fuji_Gaming.jpg" alt="logo" class="logo">
         <div>
             <input type="search" placeholder="Search" class="search-input js-search-input">
-            <nav class="nav-bar-container">
-                <a href="">Home</a>
-                <a href="">Services</a>
-                <a href="https://nwanodicv.github.io/wdd131/project/project-form.html">Products</a>
-                <a href="">contact</a>
-                <a href="">About</a>
-            </nav>
+        </div>
+        <div class="cart-container">
+            <a class="cart-link header-link" href="#">
+                <span class="cart-quantity js-cart-quantity">0</span>
+                <img class="cart-icon" src="images/cart-emoji.png">
+                <div class="cart-text">Cart</div>
+            </a>
         </div>
         <div>
             <output class="nav-links-output"></output>
         </div>
-        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-            <i class="fa fa-bars"></i>
-          </a>
+        <div>
+            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+                <i class="fa fa-bars"></i>
+            </a>
+        </div>
+        <div>
+            <nav class="nav-bar-container">
+                <li><a href="">Home</a></li>
+                <li><a href="">Services</a></li>
+                <li><a href="https://nwanodicv.github.io/wdd131/project/project-form.html">Products</a></li>
+                <li><a href="">contact</a></li>
+                <li><a href="">About</a></li>
+            </nav>
+        </div>
     </header>
     <main class="js-main">
         <div class="products-grid js-product-grid">
@@ -494,12 +495,11 @@
                     </div>
                     <div->
                         <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div-->
-                </div>
+                    </div>
+                </div-->
             </section>
         </div>
     </main>  
-    
     <footer>
         &copy; 2024
         &copy; Chimezie Victor Nwanodi
