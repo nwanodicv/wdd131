@@ -1,7 +1,6 @@
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');
 
-lastModified.innerHTML = ""
 
 
 // returns: Tuesday, December 16, 2017 11:09:42
