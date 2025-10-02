@@ -33,12 +33,8 @@ let productHTML = "";
 product.forEach((item) => {
 
 //..........Generate the HTML..........
-    productHTML  += `
-    <div>
-      <option id=${item.id} name=${item.name} disabled selected></option>
-      <option value=${item.id}>${item.name}</option>
-    <div>
-    `
+
+  productHTML += `<option value="${item.id}">${item.name}</option>`;
 });
 
 const outPut = document.querySelector('#productName').innerHTML = productHTML
@@ -99,54 +95,9 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
 
-//..............Cart Here................
-
-//const cart = [{
-//
-//}]
-//cart.push(product);
-//
-//function addToCart(name) {
-//  //   the code below is to increase the quantity of one product   
-//  let matchingItem = '';
-//
-//  cart.forEach((cartItem) => {
-//      if (name === cartItem.name) {
-//          matchingItem = cartItem;
-//      }
-//
-//      console.log(matchingItem)
-//  });
-//
-//  if (matchingItem) {
-//    matchingItem.quantity += 1;
-//}else{
-//    cart.push({
-//        name: name,
-//        quantity: 1,
-//    });
-//}
-//}
-//
-//
-//function updateproductReview() {
-//  //The code below shows the total number of products in the cart
-//  let productReview = 0;
-//  product.forEach((cartItem) => {
-//    productReview += cartItem.quantity
-//  });
-//  const productsReview = document.querySelector('.js-cart-quantity')
-//productsReview.innerHTML = productReview
-//};
-//
-//// Below here we make the button interactive by using EventListener
-//document.querySelectorAll('.js-add-to-cart')
-//  .forEach((button) => {
-//      button.addEventListener('click', () => {
-//        "hello world"
-//          const name = button.dataset.productId;
-//          addToCart(name)
-//          updateproductReview()
-//          
-//      });
-//  });
+// productHTML  += `
+//    <div>
+//      <option id=${item.id} name=${item.name} disabled selected></option>
+//      <option value=${item.id}>${item.name}</option>
+//    <div>
+//    `
