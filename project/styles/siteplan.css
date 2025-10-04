@@ -99,7 +99,7 @@ a {
 
 
 footer {
-  color: white;
+  color: rgb(255, 255, 255);
   text-align: center;
   background-color: rgb(128, 0, 128);
   padding: 18px;
@@ -147,7 +147,7 @@ text-align: center;
     font-family: var(--paragraph-font);
     padding: 10px;
     max-width: 1500px;
-    width: 219vh;
+    width: 100%;
   }
 
   .main-header {
@@ -170,15 +170,17 @@ text-align: center;
   .footer-large-screen {
     max-width: 700px;
     margin-top: 1rem;
-    
+    color: rgb(255, 255, 255);
     padding: 18px;
-  
     background-color: rgb(121, 2, 121);
+  }
+
+  .copy {
+    text-align: center;
   }
 
 
   .navigation-bar {
-    background-color: var(--accent1-color);
     margin-bottom: 2rem;
   }
 
@@ -224,7 +226,7 @@ text-align: center;
   h1 {
     text-align: center;
     color: rgb(228, 206, 206);
-    font-size: bold;
+    font-weight: bold;
   }
 
   .my-name {
@@ -329,6 +331,7 @@ text-align: center;
   
   .footer-1{
     background-color: rgb(128, 0, 128);
+    color: rgb(255, 255, 255);
       padding: 20px;
       margin-top: 1rem;
       margin-left: 30.1rem;
