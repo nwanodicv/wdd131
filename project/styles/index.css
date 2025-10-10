@@ -7,7 +7,9 @@
 }
 
 /* reset */
-* { margin: 0; box-sizing: border-box; }
+* { margin: 0; 
+    box-sizing: border-box; 
+}
 
 /* baseline */
 body {
@@ -22,13 +24,63 @@ header {
   padding: 0.5rem;
 }
 
-/* nav list */
+/* ----- MOBILE NAVIGATION ----- */
+.icon {
+  display: block;
+  font-size: 26px;
+  cursor: pointer;
+  color: white;
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  background: none;
+  border: none;
+}
+
+.nav-bar-container {
+  display: none;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  padding: 10px 0;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  z-index: 1000; /* ensures it's visible above other elements */
+}
+
+.nav-bar-container.show {
+  display: flex;
+}
+
 .nav-bar-container ul {
-  display: none; /* shown on wide screens via media query */
   list-style: none;
   padding: 0;
   margin: 0;
 }
+
+.nav-bar-container li {
+  margin: 5px 0;
+}
+
+.nav-bar-container a {
+  color: black;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+.nav-bar-container a:hover {
+  color: var(--accent1-color);
+}
+
+
+
+
+
+
+
 
 /* product styles */
 .products-grid {
@@ -39,8 +91,9 @@ header {
 }
 
 .product-container {
-  background-color: var(--product-container-color);
-  width: 100%;
+  background-color: rgb(255, 255, 255);
+  width: 22rem;
+  height: 25.5rem;
   border: 1px solid #ccc; /* fixed from your border-style mistake */
   padding: 0.5rem;
 }
@@ -100,7 +153,7 @@ header, main, footer {
 .cta-button {
   background-color: var(--accent1-color);
   color: white;
-  padding: 0.75rem 1.5rem;
+  padding: 0.2rem 1.5rem;
   border-radius: 1rem;
   text-decoration: none;
   font-weight: bold;
@@ -117,31 +170,7 @@ header, main, footer {
 }
 
 
-header a {
-    color: white;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-    display: block;
-}
 
-header .nav-bar-container {
-    display: none;
-    justify-content: space-evenly;
-}
-
-header a.icon {
-    margin-top: 3.2rem;
-    background-color: var(--accent1-color);
-    display: block;
-    position: absolute;
-    right: 0;
-    top: 0;
-}
-
-a:hover {
-    font-size: 1.2rem;
-}
 
 
 /*-----------------------------------------------------*/
@@ -288,10 +317,6 @@ select {
     
 }
 
-.product-container {
-    background-color: rgb(247, 241, 241);
-    width: 24rem;
-  }
 
 
 .search-input {
@@ -300,8 +325,8 @@ select {
 }
 
 .product-img1 {
-    width: 24rem;
-    height: 20rem;
+    width: 18rem;
+    height: 12rem;
     
 
 }
@@ -351,10 +376,32 @@ span {
 
  @media screen and (min-width: 768px){
 
-    .nav-bar-container ul { 
-        display: flex; 
-        justify-content: space-evenly; 
-    }
+    .icon {
+    display: none;
+  }
+
+  .nav-bar-container {
+    display: flex !important;
+    justify-content: flex-end;
+    background-color: transparent;
+    position: static;
+  }
+
+  .nav-bar-container ul {
+    display: flex;
+    gap: 1rem;
+  }
+
+  .nav-bar-container li {
+    margin: 0;
+  }
+
+  .nav-bar-container a {
+    color: white;
+  }
+
+
+
 
   .products-grid {
     grid-template-columns: repeat(4, 1fr); 
@@ -397,6 +444,7 @@ span {
 
     .nav-bar-container {
         display: flex;
+        justify-content: flex-end;
     }
 
     /*.............Cart Here.............*/
@@ -446,10 +494,10 @@ span {
   
     .product-container {
       border-style: 1px solid gray;
-      width: 15.2rem;
-      height: 23.5rem;
+      width: 16.2rem;
+      height: 25.5rem;
       column-gap: 2rem;
-      background-color: var(--product-container-color);
+      background-color: rgb(255, 255, 255);
     }
   
     .nav-bar-container.li {
@@ -469,9 +517,30 @@ span {
 
     /* Here is to make the navigation bar display on the large screen! */
 
+    header a {
+    color: white;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+    }
+    
     header .nav-bar-container {
-        display: flex;
+        display: none;
         justify-content: space-evenly;
+    }
+    
+    header a.icon {
+        margin-top: 3.2rem;
+        background-color: var(--accent1-color);
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    
+    a:hover {
+        font-size: 1.2rem;
     }
 
     /*..............................*/
@@ -535,6 +604,16 @@ span {
         font-weight: 100px;
         margin-top: 5px;
     }
+
+    .cta-button {
+        background-color: var(--accent1-color);
+        color: white;
+        padding: 0.75rem 1.5rem;
+        border-radius: 1rem;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
     
     .button-btn {
         background-color: rgb(128, 0, 128);

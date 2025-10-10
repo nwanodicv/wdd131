@@ -3,6 +3,8 @@ const products = [{
     image: 'images/computer-chair.jpg',
     name: 'Computer Chair',
     alt: 'Computer Chair',
+    category: 'Home',
+    category: 'Electronics',
     description: 'Ergonomic computer chair with lumbar support and breathable mesh back.',
     specs: [
       'Adjustable height',
@@ -21,7 +23,7 @@ const products = [{
 
     name: 'AC Infinity Advance Grow',
     alt: 'AC Infinity Advance Grow',
-
+    category: 'Electronics',
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
 
@@ -36,7 +38,7 @@ const products = [{
 
     name: 'Fuji Gaming',
     alt: 'Fuji Gaming Chair',
-
+    category: 'Electronics',
     rating: {
         stars: 'images/rating star emoji.jpg',
 
@@ -52,6 +54,7 @@ const products = [{
 
     name: 'Gaming Accessaries',
     alt: 'Gaming Accessaries',
+    category: 'Electronics',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -67,6 +70,7 @@ const products = [{
 
     name: 'Hog Dog Streamer Machine',
     alt: 'Hog Dog Streamer Machine',
+    category: 'Electronics',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -83,6 +87,7 @@ const products = [{
 
     name: 'Hover Succer Ball',
     alt: 'Hover Succer Ball',
+    category: 'Sports',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -99,6 +104,7 @@ const products = [{
 
     name: 'Keyboard',
     alt: 'Mechanical Keyboard',
+    category: 'Electronics',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -115,6 +121,7 @@ const products = [{
 
     name: 'Kids Piggy For Girls',
     alt: 'Kids Piggy',
+    category: 'Home',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -131,6 +138,7 @@ const products = [{
 
     name: 'Lenovo Laptop',
     alt: 'Lenovo ThinkPad Laptop',
+    category: 'Electronics',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -147,6 +155,7 @@ const products = [{
 
     name: 'Men Gray Sport-athletic Cotton',
     alt: 'Men Gray Sport-athlectic cotton',
+    category: 'Clothing',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -163,6 +172,7 @@ const products = [{
 
     name: 'Basketball',
     alt: 'Basketball',
+    category: 'Sports',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -179,6 +189,7 @@ const products = [{
 
     name: 'Smart watch for Men & Women',
     alt: 'Smart Watch',
+    category: 'Electronics',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -239,6 +250,8 @@ products.forEach((product) => {
 
 document.querySelector('.js-product-grid').innerHTML = productsHTML;
 
+
+
 //................Cart Array.........
 
 /* Cart (store minimal info in localStorage so number persists) */
@@ -257,7 +270,7 @@ function updateCartQuantity(){
 }
 
 
-/* add to cart (fix: compare productId to cartItem.productId) */
+/* add to cart */
 function addToCart(productId, qty = 1){
   let matching = cart.find(ci => ci.productId === productId);
   if (matching){
@@ -268,7 +281,7 @@ function addToCart(productId, qty = 1){
   updateCartQuantity();
 }
 
-/* attach listeners for add-to-cart buttons */
+/* add-to-cart buttons */
 document.querySelectorAll('.js-add-to-cart').forEach(button => {
   button.addEventListener('click', (e) => {
     const productId = button.dataset.productId;
@@ -293,21 +306,61 @@ const sortSelect = document.getElementById('sort');
 const productsContainer = document.getElementById('products'); // make sure your product section has this id
 
 // Function to show products
+const productsGrid = document.querySelector('.js-product-grid'); // consistent target
+
 function displayProducts(filteredProducts) {
-  productsContainer.innerHTML = ""; // Clear current products
+  productsGrid.innerHTML = "";
   filteredProducts.forEach(product => {
     const div = document.createElement('div');
     div.classList.add('product-card');
     div.innerHTML = `
-      <img src="${product.image}" alt="${product.alt}" loading="lazy">
-      <h3>${product.name}</h3>
+    <div  class="product-container">
+      <div class="product-image-container">
+        <img src="${product.image}" class="product-img1" ${product.alt} loading="lazy">
+      </div>
+      <div class="product-rating-star">
+          <img src="${product.rating.stars}" class="stars-rating">
+          <div class="product-rating-number">
+              ${product.rating.count}
+          </div>
+      </div>
+      <h3 class="product-name">${product.name}</h3>
       <p>${product.category}</p>
-      <p>$${product.price.toFixed(2)}</p>
-      <button>Add to Cart</button>
+      <p>$${(product.priceCent / 100).toFixed(2)}</p>
+      <div class="quantity">
+                <div>Quantity</div>
+                <select>
+                    <option required disabled selected>select</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                </select>
+            </div>
+      <button class="button-btn js-add-to-cart">Add to Cart</button>
+    </div>
     `;
-    productsContainer.appendChild(div);
+    productsGrid.appendChild(div);
   });
 }
+
+
+// CATEGORY FILTER
+categorySelect.addEventListener('change', () => {
+  const selectedCategory = categorySelect.value;
+  const filtered = selectedCategory === 'all'
+    ? products
+    : products.filter(p => p.category === selectedCategory);
+  displayProducts(filtered);
+});
+
+
 
 
 // Initial display
@@ -354,11 +407,7 @@ lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
 
 // Hamburger Menu
 
-  function myFunction() {
-	const x = document.querySelector(".nav-bar-container");
-	if (x.style.display === "block") {
-	  x.style.display = "none";
-	} else {
-	  x.style.display = "block";
-	}
-  }
+ function myFunction() {
+  const nav = document.querySelector(".nav-bar-container");
+  nav.classList.toggle("show");
+}
