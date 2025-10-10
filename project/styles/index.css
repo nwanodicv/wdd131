@@ -349,7 +349,7 @@ span {
 
  /* large screen */
 
- @media screen and (min-width: 600px){
+ @media screen and (min-width: 768px){
 
     .nav-bar-container ul { 
         display: flex; 
@@ -388,6 +388,15 @@ span {
         width: 3rem;
         height: 3rem;
        
+    }
+
+    /*-----------------------Hamburger------------------------------*/
+    .icon {
+        display: none;
+    }
+
+    .nav-bar-container {
+        display: flex;
     }
 
     /*.............Cart Here.............*/

@@ -352,6 +352,7 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
 
+// Hamburger Menu
 
   function myFunction() {
 	const x = document.querySelector(".nav-bar-container");
