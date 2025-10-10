@@ -1,25 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en-US">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Review</title>
-    <meta name="description" content="Products Review learning activity page">
-    <meta name="author" content="Chimezie Victor Nwanodi">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Product Review Form</title>
+    <meta name="description" content="This is a product review form page for VIJUTech">
+    <meta name="author" content="Chimezie Victor Stephen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="" href="https://fonts.googleapis.com/css2?family=roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
     <link rel="stylesheet" href="styles/form.css">
     <!-- Top Navigation Menu -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-     <header>
-        <img src="images/Fuji_Gaming.jpg" alt="logo" class="logo" loading="lazy">
-        <h1>Product Review</h1>
-        <div>
-            <input type="search" placeholder="Search" class="search-input js-search-input">
-        </div>
+    <header>
+        <img src="images/VIJUTech-logo3.PNG" alt="Logo" class="logo-img">
         <div class="cart-container">
             <a class="cart-link header-link" href="#">
                 <span class="cart-quantity js-cart-quantity">0</span>
@@ -27,36 +23,37 @@
                 <div class="cart-text">Cart</div>
             </a>
         </div>
+        <h1>Product Review</h1>
+    
+        <nav class="nav-bar-container">
+            <a class="home" href="">Home</a>
+            <a class="about" id="js-about-page" href="">About</a>
+            <a class="proposal" href="">Proposal</a>
+            <a class="winners" href="">Winners</a>
+            <a class="contact" href="">Contact</a>
+        </nav>
         <div>
             <output class="nav-links-output"></output>
         </div>
-        <div>
-            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-        <div>
-            <nav class="nav-bar-container">
-                <li><a class="js-home-page" href="">Home</a></li>
-                <li><a class="js-old-temples" href="#old-page" onclick="oldTemple()">About</a></li>
-                <li><a href="" onclick="newTemple()">Proposal</a></li>
-                <li><a href="" onclick="largeTemple()">Winners</a></li>
-                <li><a href="" onclick="smallTemple()">Contact</a></li>
-            </nav>
-        </div>
+       
+        <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+          </a>
     </header>
-     <main>
-        <!--Content Here-->
-        <h1>Products Reviewed</h1>
-        <p>Thanks for reviewing our products. Your products review has been posted successfully.</p>
+    <main>
+         <div id="js-navbar-content-output"></div>
+        <h1>Product Review</h1>
+        <p>Thank you for reviewing our products. Your products review has been posted successfully,  we appreciate your feedback!</p>
     </main>
+    
     <footer>
         &copy; 2024
-        &copy; Chimezie Victor Nwanodi
+        &copy; Chimezie Victor Stephen
         &copy; Nigeria
         <p>
-        <span id="last-modification"></span>
+          <span id="last-modification"></span>
+        </p>
     </footer>
     <script src="scripts/form.js"></script>
 </body>
