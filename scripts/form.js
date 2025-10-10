@@ -48,15 +48,6 @@ aboutPage.addEventListener('click', function() {
 aboutPage.addEventListener('mouseover', function() {
   aboutPage.style.backgroundColor = 'purple';
 }),
-//..........Hamburger Here..............
-function myFunction() {
-	const x = document.querySelector(".nav-bar-container");
-	if (x.style.display === "block") {
-	  x.style.display = "none";
-	} else {
-	  x.style.display = "block";
-	}
-  }
 
  //..............Local Storage........... 
   clickCounter();
@@ -83,8 +74,21 @@ form.addEventListener('submit', (ev) => {
   // let the form submit naturally (do not call preventDefault unless you want to handle submission via JS)
 });
 
+function myFunction() {
+  const nav = document.querySelector(".nav-bar-container");
+  nav.classList.toggle("active");
+}
 
 
+//..........Hamburger Here..............
+function myFunction() {
+	const x = document.querySelector(".nav-bar-container");
+	if (x.style.display === "block") {
+	  x.style.display = "none";
+	} else {
+	  x.style.display = "block";
+	}
+  }
 
 
   // ...........Clear Local Storage after some time...........

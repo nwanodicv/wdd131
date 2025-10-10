@@ -156,6 +156,7 @@ header .nav-bar-container {
     justify-content: space-evenly;
 }
 
+
 header a.icon {
     margin-top: 3.2rem;
     display: block;
@@ -266,17 +267,18 @@ span {
 }
 
  /* large screen */
-
- * {
-    margin: 0;
-}
-
   @media screen and (min-width: 500px) {
+
+    * {
+       margin: 0;
+    }
+
     /*............Body Here............*/
     body {
         font-family: 'roboto', sans-serif;
         width: 220vh;
     }
+
 
 
     header, main, footer {
@@ -492,6 +494,5 @@ span {
     span {
         font-size: 10px;
     }
-    
 }
 /*---------------------------------------------
