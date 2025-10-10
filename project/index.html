@@ -3,23 +3,28 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ViJu E-commerce</title>
-  <meta name="description" content="Project activity home page" />
+  <title>ViJu E-commerce — Affordable Tech & Accessories</title>
+  <meta name="description" content="Shop the best electronics, fashion, and sports gear at ViJu E-commerce. Affordable prices and fast delivery!"/>
   <meta name="author" content="Chimezie Victor Stephen" />
-
   <!-- Google font (correct syntax) -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-
   <!-- Styles -->
   <link rel="stylesheet" href="styles/index.css">
-
   <!-- Font Awesome (icons) -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="canonical" href="https://yourdomain.com/">
+  <!--Open Graph-->
+  <meta property="og:title" content="ViJu E-commerce — Affordable Tech & Accessories">
+  <meta property="og:description" content="Shop affordable electronics, fashion, and sports gear at ViJu E-commerce. Great deals every day!">
+  <meta property="og:image" content="images/banner.jpg">
+  <meta property="og:url" content="https://viju-ecommerce.com/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="ViJu E-commerce">
 </head>
 
 <body>
   <header>
-    <img src="images/Fuji_Gaming.jpg" alt="ViJu logo" class="logo">
+    <img src="images/VIJUTech-logo3.PNG" alt="ViJu logo" class="logo" loading="lazy">
     <div>
       <input type="search" placeholder="Search" class="search-input js-search-input" aria-label="Search site">
     </div>
@@ -47,59 +52,59 @@
         <li><a href="">About</a></li>
       </ul>
     </nav>
+  </header>
 
+  <main class="js-main">
     <section class="hero-banner">
         <h1>Big Sale on Gaming Gear!</h1>
         <p>Get up to 30% off on all accessories this week.</p>
         <a href="project/project-form.html" class="cta-button">Shop Now</a>
     </section>
 
-    <section class="featured-products">
-        <h2>Featured Categories</h2>
-        <div class="products-grid js-product-grid"></div>
-    </section>
-  </header>
-
-  <main class="js-main">
+    
     <!-- Categories and Filters Section -->
-<section id="filters">
-  <h2>Shop by Category</h2>
-
-  <div class="filter-controls">
-    <!-- Product Categories -->
-    <div class="category-filter">
-      <label for="category">Category:</label>
-      <select id="category">
-        <option value="all">All</option>
-        <option value="electronics">Electronics</option>
-        <option value="clothing">Clothing</option>
-        <option value="home">Home</option>
-        <option value="sports">Sports</option>
-      </select>
-    </div>
-
-    <!-- Sort by -->
-    <div class="sort-filter">
-      <label for="sort">Sort by:</label>
-      <select id="sort">
-        <option value="default">Default</option>
-        <option value="price-low-high">Price: Low to High</option>
-        <option value="price-high-low">Price: High to Low</option>
-        <option value="popularity">Popularity</option>
-      </select>
-    </div>
-  </div>
-</section>
-<section id="products"></section>
+    <section id="filters">
+      <h2>Shop by Category</h2>
+    
+      <div class="filter-controls">
+        <!-- Product Categories -->
+        <div class="category-filter">
+          <label for="category">Category:</label>
+          <select id="category">
+            <option value="all">All</option>
+            <option value="electronics">Electronics</option>
+            <option value="clothing">Clothing</option>
+            <option value="home">Home</option>
+            <option value="sports">Sports</option>
+          </select>
+        </div>
+    
+        <!-- Sort by -->
+        <div class="sort-filter">
+          <label for="sort">Sort by:</label>
+          <select id="sort">
+            <option value="default">Default</option>
+            <option value="price-low-high">Price: Low to High</option>
+            <option value="price-high-low">Price: High to Low</option>
+            <option value="popularity">Popularity</option>
+          </select>
+        </div>
+      </div>
+    </section>
+    <section id="products"></section>
 
     <!-- Empty container — JS will populate the product cards -->
     <div class="products-grid js-product-grid" role="region" aria-label="Products"></div>
   </main>
 
   <footer>
-    <div>&copy; 2024 — Chimezie Victor Nwanodi — Nigeria</div>
-    <p><span id="last-modification"></span></p>
-  </footer>
+        &copy; 2024
+        &copy; Chimezie Victor Stephen
+        &copy; Nigeria
+        <p>
+          <span id="last-modification"></span>
+        </p>
+    </footer>
 
   <script src="scripts/index.js"></script>
 </body>

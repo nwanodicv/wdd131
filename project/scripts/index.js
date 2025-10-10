@@ -2,6 +2,7 @@ const products = [{
     id: '3a6t-a45jd9-7n5j',
     image: 'images/computer-chair.jpg',
     name: 'Computer Chair',
+    alt: 'Computer Chair',
     description: 'Ergonomic computer chair with lumbar support and breathable mesh back.',
     specs: [
       'Adjustable height',
@@ -19,6 +20,7 @@ const products = [{
     image: 'images/AC-infinity-advance-grow.jpg',
 
     name: 'AC Infinity Advance Grow',
+    alt: 'AC Infinity Advance Grow',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -33,6 +35,7 @@ const products = [{
     image: 'images/Fuji_Gaming.jpg',
 
     name: 'Fuji Gaming',
+    alt: 'Fuji Gaming Chair',
 
     rating: {
         stars: 'images/rating star emoji.jpg',
@@ -48,6 +51,7 @@ const products = [{
     image: 'images/gaming-accessaries.jpg',
 
     name: 'Gaming Accessaries',
+    alt: 'Gaming Accessaries',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -62,6 +66,7 @@ const products = [{
     image: 'images/hog-dog-steamer-machine.jpg',
 
     name: 'Hog Dog Streamer Machine',
+    alt: 'Hog Dog Streamer Machine',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -74,9 +79,10 @@ const products = [{
 
     id: 'kfu4-i4nf-58sjf4',
 
-    image: 'images/hover succer ball.jpg',
+    image: 'images/hover-succer-ball.jpg',
 
     name: 'Hover Succer Ball',
+    alt: 'Hover Succer Ball',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -92,6 +98,7 @@ const products = [{
     image: 'images/keyboard.jpg',
 
     name: 'Keyboard',
+    alt: 'Mechanical Keyboard',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -107,6 +114,7 @@ const products = [{
     image: 'images/kids-piggy-bank-for-girls.jpg',
 
     name: 'Kids Piggy For Girls',
+    alt: 'Kids Piggy',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -122,6 +130,7 @@ const products = [{
     image: 'images/lenovo-laptop.jpg',
 
     name: 'Lenovo Laptop',
+    alt: 'Lenovo ThinkPad Laptop',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -132,11 +141,12 @@ const products = [{
     priceCent: 70000,
 },{
 
-    id: 'ngi8-dJH4-s9jns',
+    id: 'ocje8r-dJH4-hdkaf4',
 
     image: 'images/mens-gray-sport-athletic-cotton.jpg',
 
     name: 'Men Gray Sport-athletic Cotton',
+    alt: 'Men Gray Sport-athlectic cotton',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -147,11 +157,12 @@ const products = [{
     priceCent: 500,
 },{
 
-    id: 'ngi8-dJH4-s9jns',
+    id: 'fhdis-ytief4-7jf40',
 
-    image: 'images/orange basketball.jpg',
+    image: 'images/orange-basketball.jpg',
 
     name: 'Basketball',
+    alt: 'Basketball',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -162,11 +173,12 @@ const products = [{
     priceCent: 3000,
 },{
 
-    id: 'ngi8-dJH4-s9jns',
+    id: 'ngy49-nb8er-83iidf',
 
-    image: 'images/smart watch for men wemen.jpg',
+    image: 'images/smart-watch-for-men-wemen.jpg',
 
     name: 'Smart watch for Men & Women',
+    alt: 'Smart Watch',
 
     rating: {
         stars: 'images/Rating-Star-PNG-HD.png',
@@ -184,7 +196,7 @@ products.forEach((product) => {
     productsHTML += `
     <div  class="product-container">
             <div class="product-image-container">
-                <img src="${product.image}" class="product-img1">
+                <img src="${product.image}" class="product-img1" ${product.alt} loading="lazy">
             </div>
             <div class="product-name">
                 ${product.name}
@@ -217,7 +229,6 @@ products.forEach((product) => {
             
             <div class="button-div">
                 <button data-product-id="${product.id}" class="button-btn js-add-to-cart">Add to Cart</button>
-                <button type="button" data-product-id="${product.id}" class="button-btn js-show-reviews">View Reviews</button>
             </div>
             <div class="reviews-container" id="reviews-${product.id}" style="display:none;"></div>
             </div>
@@ -288,7 +299,7 @@ function displayProducts(filteredProducts) {
     const div = document.createElement('div');
     div.classList.add('product-card');
     div.innerHTML = `
-      <img src="${product.image}" alt="${product.name}">
+      <img src="${product.image}" alt="${product.alt}" loading="lazy">
       <h3>${product.name}</h3>
       <p>${product.category}</p>
       <p>$${product.price.toFixed(2)}</p>
@@ -321,71 +332,11 @@ sortSelect.addEventListener('change', () => {
 });
 
 
-
-
-
-//const cart = [{
-//    productId: '3a6t-a45jd9-7n5j',
-//    quantity: 0,
-//}, {
-//    productId: 'j59he-gkrcmi-sfldn',
-//    quantity: 0,
-//}];
-
-
-
-//function addToCart(productId) {
-////   the code below is to increase the quantity of one product   
-//    let matchingItem = '';
-//
-//    cart.forEach((cartItem) => {
-//        if (productId === cartItem.productName) {
-//            matchingItem = cartItem;
-//        }
-//    });
-//
-//    if (matchingItem) {
-//        matchingItem.quantity += 1;
-//    }else{
-//        cart.push({
-//            productId: productId,
-//            quantity: 1,
-//        });
-//    }
-//};
-
-
-
-
-
-//function updateCartQuantity() {
-//    //The code below shows the total number of products in the cart
-//    let cartQuantity = 0;
-//
-//    cart.forEach((cartItem) => {
-//        cartQuantity += cartItem.quantity;
-//    });
-//    document.querySelector('.js-cart-quantity').
-//innerHTML = cartQuantity;
-//};
-//// Below here we make the button interactive by using EventListener
-//document.querySelectorAll('.js-add-to-cart')
-//    .forEach((button) => {
-//        button.addEventListener('click', () => {
-//            const productId = button.dataset.productId;
-//
-//            console.log(productId)
-//            addToCart(productId)
-//            updateCartQuantity()
-//            
-//        });
-//    });
-
-
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');
 
-lastModified.innerHTML = "";
+lastModified.innerHTML = ""
+
 
 // returns: Tuesday, December 16, 2017 11:09:42
 let oLastModif = new Date(document.lastModified);
@@ -400,7 +351,6 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 }`;
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
-
 
 
   function myFunction() {
