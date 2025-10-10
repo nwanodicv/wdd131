@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Product Review Form</title>
-    <meta name="description" content="Form learning activity page">
-    <meta name="author" content="Chimezie Victor Nwanodi">
+    <meta name="description" content="This is a product review form page for VIJUTech">
+    <meta name="author" content="Chimezie Victor Stephen">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap">
@@ -26,79 +26,87 @@
         <h1>Product Review</h1>
     
         <nav class="nav-bar-container">
-            <a class="js-home-page" href="">Home</a>
-            <a class="js-old-temples" href="#old-page" onclick="oldTemple()">About</a>
-            <a href="" onclick="newTemple()">Proposal</a>
-            <a href="" onclick="largeTemple()">Winners</a>
-            <a href="" onclick="smallTemple()">Contact</a>
+            <a class="home" href="">Home</a>
+            <a class="about" id="js-about-page" href="">About</a>
+            <a class="proposal" href="">Proposal</a>
+            <a class="winners" href="">Winners</a>
+            <a class="contact" href="">Contact</a>
         </nav>
-        <div>
-            <output class="nav-links-output"></output>
-        </div>
+       
         <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
         <a href="javascript:void(0);" class="icon" onclick="myFunction()">
             <i class="fa fa-bars"></i>
           </a>
     </header>
     <main>
-        <form method="get" action="review.html" class="form">
+         <div>
+            <output class="nav-links-output" id="js-navbar-content-output"></output>
+        </div>
+        <form method="get" action="review.html" class="form" id="reviewForm" novalidate>
             <fieldset>
-                <legend>
-                    Product Review
-                </legend>
-                <label>Product Name
-                    <select id="productName" name="Product Name" required>
-                        <!--option disabled selected>Select a Product...</option>
-                        <option value="new cap">New Cap</option>
-                        <option value=""></option>
-                        <option value=""></option>
-                        <option value=""></option-->
-                    </select>
-                </label>
-                <div class="radio-group">
-                    <div>Overall Rating</div>
-                    
-                    <label for="Rating1"><input type="radio" id="Rating1" name="stars" required>*</label>
-                    <label for="Rating2"><input type="radio" id="Rating2" name="stars" required>**</label>
-                    <label for="Rating3"><input type="radio" id="Rating3" name="stars" required>***</label>
-                    <label for="Rating4"><input type="radio" id="Rating4" name="stars" required>****</label>
-                    <label for="Rating5"><input type="radio" id="Rating5" name="stars" required>*****</label>
-                </div>
-                <div class="installed-date">Date of Installation</div>
-                <label for="Installation"><input type="date" id="Installation" name="Installation" class="date-input" required></label>
-                <div class="h4-text">which feature do you find useful in the product?</div>
-                <div class="h5-text">(Check all that apply)</div>
-                <div class="checkbox-area">
-                    <label><input type="checkbox" name="durability" value="yes" required>Durability</label>
-                    <label><input type="checkbox" name="easy of use" value="yes" required>Easy of Use</label>
-                    <label><input type="checkbox" name="performance" value="yes" required>Performance</label>
-                    <label><input type="checkbox" name="design" value="yes" required>Design</label>
-                </div>
-                
-                <div class="text-area">
-                    <div class="input-name">Write Review</div>
-                    <div class="option input-name">(Optional)</div>
-                </div>
-                <textarea placeholder="Text Area" type="text" name="reviewText" class="input-area" required></textarea>
-                
-                <div class="text-area">
-                    <div class="input-name">Your Name</div>
-                    <div class="option input-name">(Optional)</div>
-                </div>
-                <input placeholder="Enter Your Name" type="text" name="username" class="input-area" required>
-                <div> 
-                    <button onclick='clickCounter()'>Post Review</button>
-                </div>
+              <legend>Product Review</legend>
+          
+              <!-- Product Name -->
+              <label for="productName">Product Name<span class="required" aria-hidden="true">*
+                <select id="productName" name="productName" required>
+                  <!-- Options dynamically populated -->
+                </select>
+              </label>
+          
+              <!-- Overall Rating -->
+              <div class="radio-group">Overall Rating <span class="required" aria-hidden="true">*</span></div>
+                <label for="rating1"><input type="radio" id="rating1" name="rating" value="1" required>*</label>
+                <label for="rating2"><input type="radio" id="rating2" name="rating" value="2">**</label>
+                <label for="rating3"><input type="radio" id="rating3" name="rating" value="3">***</label>
+                <label for="rating4"><input type="radio" id="rating4" name="rating" value="4">****</label>
+                <label for="rating5"><input type="radio" id="rating5" name="rating" value="5">*****</label>
+          
+              <!-- Installation Date -->
+              <div class="installed-date">Date of Installation <span class="required" aria-hidden="true">*</div>
+              <label for="installationDate">
+                <input type="date" id="installationDate" name="installationDate" class="date-input" required>
+              </label>
+          
+              <!-- Features -->
+              <div class="h4-text">Which feature do you find useful in the product?</div>
+              <div class="h5-text">(Check all that apply) <span class="required" aria-hidden="true">*</div>
+              <div class="checkbox-area" role="group" aria-labelledby="featuresLabel">
+                <div id="featuresLabel" class="visually-hidden">Product features</div>
+                <label for="durability"><input type="checkbox" id="durability" name="features" value="durability">Durability</label>
+                <label for="easyOfUse"><input type="checkbox" id="easyOfUse" name="features" value="easeOfUse">Ease of Use</label>
+                <label for="performance"><input type="checkbox" id="performance" name="features" value="performance">Performance</label>
+                <label for="design"><input type="checkbox" id="design" name="features" value="design">Design</label>
+              </div>
+          
+              <!-- Review -->
+              <div class="text-area">
+                <div class="input-name">Write Review</div>
+                <div class="option input-name">(Optional)</div>
+              </div>
+              <textarea placeholder="Write your review..." id="reviewText" name="reviewText" class="input-area"></textarea>
+          
+              <!-- Name -->
+              <div class="text-area">
+                <div class="input-name">Your Name</div>
+                <div class="option input-name">(Optional)</div>
+              </div>
+              <input placeholder="Enter your name" type="text" id="userName" name="userName" class="input-area">
+          
+              <!-- Submit -->
+              <div>
+                <button type="submit" id="submitReview">Post Review</button>
+              </div>
             </fieldset>
         </form>
     </main>
     
     <footer>
         &copy; 2024
-        &copy; Chimezie Victor Nwanodi
+        &copy; Chimezie Victor Stephen
         &copy; Nigeria
         <p>
-        <span id="last-modification"></span>
+          <span id="last-modification"></span>
+        </p>
     </footer>
     <script src="scripts/form.js"></script>
 </body>

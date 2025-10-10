@@ -1,18 +1,19 @@
 const products = [{
     id: '3a6t-a45jd9-7n5j',
-
     image: 'images/computer-chair.jpg',
-
     name: 'Computer Chair',
-
+    description: 'Ergonomic computer chair with lumbar support and breathable mesh back.',
+    specs: [
+      'Adjustable height',
+      'Breathable mesh',
+      'Weight capacity 300 lb'
+    ],
     rating: {
-        stars: 'images/Rating-Star-PNG-HD.png',
-
-        count: 95,
+      stars: 'images/Rating-Star-PNG-HD.png',
+      count: 95,
     },
-
     priceCent: 10000,
-}, {
+  }, {
     id: '8j57dsh-bg8n39a-8tn1',
 
     image: 'images/AC-infinity-advance-grow.jpg',
@@ -213,66 +214,172 @@ products.forEach((product) => {
                     <option value="10">10</option>
                 </select>
             </div>
+            
             <div class="button-div">
                 <button data-product-id="${product.id}" class="button-btn js-add-to-cart">Add to Cart</button>
+                <button type="button" data-product-id="${product.id}" class="button-btn js-show-reviews">View Reviews</button>
             </div>
+            <div class="reviews-container" id="reviews-${product.id}" style="display:none;"></div>
+            </div>
+            
         </div>`
+        
 });
 
 document.querySelector('.js-product-grid').innerHTML = productsHTML;
 
 //................Cart Array.........
-const cart = [{
-    productId: '3a6t-a45jd9-7n5j',
-    quantity: 0,
-}, {
-    productId: 'j59he-gkrcmi-sfldn',
-    quantity: 0,
-}];
-function addToCart(productId) {
-    //   the code below is to increase the quantity of one product   
-    let matchingItem = '';
 
-    cart.forEach((cartItem) => {
-        if (productId === cartItem.productName) {
-            matchingItem = cartItem;
-        }
-    });
+/* Cart (store minimal info in localStorage so number persists) */
+let cart = JSON.parse(localStorage.getItem('viJuCart')) || [];
 
-    if (matchingItem) {
-        matchingItem.quantity += 1;
-    }else{
-        cart.push({
-            productId: productId,
-            quantity: 1,
-        });
-    }
-};
+/* helper: get total quantity */
+function getCartTotalQuantity(){
+  return cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+}
+
+/* update cart DOM */
+function updateCartQuantity(){
+  const total = getCartTotalQuantity();
+  document.querySelector('.js-cart-quantity').textContent = total;
+  localStorage.setItem('viJuCart', JSON.stringify(cart));
+}
 
 
+/* add to cart (fix: compare productId to cartItem.productId) */
+function addToCart(productId, qty = 1){
+  let matching = cart.find(ci => ci.productId === productId);
+  if (matching){
+    matching.quantity += qty;
+  } else {
+    cart.push({ productId, quantity: qty });
+  }
+  updateCartQuantity();
+}
 
-function updateCartQuantity() {
-    //The code below shows the total number of products in the cart
-    let cartQuantity = 0;
+/* attach listeners for add-to-cart buttons */
+document.querySelectorAll('.js-add-to-cart').forEach(button => {
+  button.addEventListener('click', (e) => {
+    const productId = button.dataset.productId;
+    // find selected quantity (closest product card)
+    const card = button.closest('.product-container');
+    const qtySelect = card.querySelector('.qty-select');
+    const qty = qtySelect && qtySelect.value ? Number(qtySelect.value) : 1;
+    addToCart(productId, qty);
+  });
+});
 
-    cart.forEach((cartItem) => {
-        cartQuantity += cartItem.quantity;
-    });
-    document.querySelector('.js-cart-quantity').
-innerHTML = cartQuantity;
-};
-// Below here we make the button interactive by using EventListener
-document.querySelectorAll('.js-add-to-cart')
-    .forEach((button) => {
-        button.addEventListener('click', () => {
-            const productId = button.dataset.productId;
+/* initialize cart count on load */
+updateCartQuantity();
 
-            console.log(productId)
-            addToCart(productId)
-            updateCartQuantity()
-            
-        });
-    });
+// ====== CATEGORY & SORT FILTER FUNCTIONALITY ======
+
+// Get the filter elements
+const categorySelect = document.getElementById('category');
+const sortSelect = document.getElementById('sort');
+
+// Get the container holding all products
+const productsContainer = document.getElementById('products'); // make sure your product section has this id
+
+// Function to show products
+function displayProducts(filteredProducts) {
+  productsContainer.innerHTML = ""; // Clear current products
+  filteredProducts.forEach(product => {
+    const div = document.createElement('div');
+    div.classList.add('product-card');
+    div.innerHTML = `
+      <img src="${product.image}" alt="${product.name}">
+      <h3>${product.name}</h3>
+      <p>${product.category}</p>
+      <p>$${product.price.toFixed(2)}</p>
+      <button>Add to Cart</button>
+    `;
+    productsContainer.appendChild(div);
+  });
+}
+
+
+// Initial display
+displayProducts(products);
+
+// Event listener for category filter
+categorySelect.addEventListener('change', () => {
+  let selectedCategory = categorySelect.value;
+  let filtered = selectedCategory === 'all' ? products : products.filter(p => p.category === selectedCategory);
+  displayProducts(filtered);
+});
+
+// Event listener for sort filter
+sortSelect.addEventListener('change', () => {
+  let sorted = [...products];
+  if (sortSelect.value === 'price') {
+    sorted.sort((a, b) => a.price - b.price);
+  } else if (sortSelect.value === 'popularity') {
+    sorted.sort((a, b) => b.price - a.price); // placeholder for now
+  }
+  displayProducts(sorted);
+});
+
+
+
+
+
+//const cart = [{
+//    productId: '3a6t-a45jd9-7n5j',
+//    quantity: 0,
+//}, {
+//    productId: 'j59he-gkrcmi-sfldn',
+//    quantity: 0,
+//}];
+
+
+
+//function addToCart(productId) {
+////   the code below is to increase the quantity of one product   
+//    let matchingItem = '';
+//
+//    cart.forEach((cartItem) => {
+//        if (productId === cartItem.productName) {
+//            matchingItem = cartItem;
+//        }
+//    });
+//
+//    if (matchingItem) {
+//        matchingItem.quantity += 1;
+//    }else{
+//        cart.push({
+//            productId: productId,
+//            quantity: 1,
+//        });
+//    }
+//};
+
+
+
+
+
+//function updateCartQuantity() {
+//    //The code below shows the total number of products in the cart
+//    let cartQuantity = 0;
+//
+//    cart.forEach((cartItem) => {
+//        cartQuantity += cartItem.quantity;
+//    });
+//    document.querySelector('.js-cart-quantity').
+//innerHTML = cartQuantity;
+//};
+//// Below here we make the button interactive by using EventListener
+//document.querySelectorAll('.js-add-to-cart')
+//    .forEach((button) => {
+//        button.addEventListener('click', () => {
+//            const productId = button.dataset.productId;
+//
+//            console.log(productId)
+//            addToCart(productId)
+//            updateCartQuantity()
+//            
+//        });
+//    });
 
 
 // page datetime last modification

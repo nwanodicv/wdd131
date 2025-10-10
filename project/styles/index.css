@@ -1,11 +1,68 @@
 /*------Mobile-phone */
-* {
-    margin: 0;
-    max-width: 640px;
+/* root variables */
+:root{
+  --accent1-color: rgb(128, 0, 128);
+  --product-container-color: rgb(247, 241, 241);
+  --paragraph-font: 'Roboto', sans-serif;
 }
 
+/* reset */
+* { margin: 0; box-sizing: border-box; }
+
+/* baseline */
 body {
-    font-family: 'roboto', sans-serif;
+  font-family: var(--paragraph-font);
+}
+
+/* header */
+header {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--accent1-color);
+  padding: 0.5rem;
+}
+
+/* nav list */
+.nav-bar-container ul {
+  display: none; /* shown on wide screens via media query */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* product styles */
+.products-grid {
+  display: grid;
+  row-gap: 2rem;
+  grid-template-columns: 1fr;
+  margin: 1rem;
+}
+
+.product-container {
+  background-color: var(--product-container-color);
+  width: 100%;
+  border: 1px solid #ccc; /* fixed from your border-style mistake */
+  padding: 0.5rem;
+}
+
+/* product price: font-weight must be numeric or keyword */
+.product-price {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+  font-weight: 400; /* valid */
+  margin-top: 5px;
+}
+
+/* button fixes */
+.button-btn {
+  background-color: var(--accent1-color);
+  width: 11rem;
+  height: 2rem;
+  font-weight: 600; /* valid numeric weight */
+  color: rgb(245, 240, 240); /* fixed */
+  border: none;
+  border-radius: 1rem;
+  margin: 0.5rem 0 20px 1rem;
 }
 
 header, main, footer {
@@ -16,12 +73,44 @@ header, main, footer {
     padding: 0.5rem;
 }
 
-/*hamburger menu styling  -----------------------*/
-header {
-    position: relative;
-    overflow: hidden;
-    background-color: rgb(128, 0, 128)
+.hero-banner {
+  background-image: url('../images/hero-banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  position: relative;
 }
+
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* dark overlay for text visibility */
+}
+
+.hero-banner h1,
+.hero-banner p,
+.hero-banner a {
+  position: relative;
+  z-index: 1;
+}
+
+.cta-button {
+  background-color: var(--accent1-color);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 1rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cta-button:hover {
+  background-color: #5a1f5a;
+}
+
+/*hamburger menu styling  -----------------------*/
 
 .logo-cart {
     display: flex;
@@ -57,6 +146,57 @@ a:hover {
 
 /*-----------------------------------------------------*/
 
+/* ===== Categories and Filters Section ===== */
+#filters {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  margin: 1rem auto;
+  border-radius: 12px;
+  max-width: 1000px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+#filters h2 {
+  font-size: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.category-filter,
+.sort-filter {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #555;
+}
+
+select {
+  padding: 0.5rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+}
+
+select:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 3px #007bff;
+}
+/*-----------------------------------------------------*/
+/* Here is to make the search engine display on the screen! */
 .search-input {
     text-align: center;
 }
@@ -210,6 +350,15 @@ span {
  /* large screen */
 
  @media screen and (min-width: 500px){
+
+    .nav-bar-container ul { 
+        display: flex; 
+        justify-content: space-evenly; 
+    }
+
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr); 
+    column-gap: 1rem; }
 
     * {
       margin: 0;

@@ -33,26 +33,22 @@ let productHTML = "";
 product.forEach((item) => {
 
 //..........Generate the HTML..........
-
   productHTML += `<option value="${item.id}">${item.name}</option>`;
 });
+const outPut = document.querySelector('#productName').innerHTML = productHTML// display the productHTML in the select element
 
-const outPut = document.querySelector('#productName').innerHTML = productHTML
+//..........About Page Here..........
+let aboutPage = document.querySelector('#js-about-page');
+aboutPage.addEventListener('click', function() {
+  event.preventDefault(); // Prevent default link behavior
+  alert = ('This is a product review form page for VIJUTech. Created by Chimezie Victor Stephen');
+  document.querySelector('#js-navbar-content-output').innerHTML = alert;
+}),
 
-
-//.........Placeholder Here...........
-const inputF = document.querySelector('#productName');
-
-inputF.addEventListener('focus', function() {
-    inputF.placeholder = "Focused - Select a Product...";
-});
-
-inputF.addEventListener('blur', function() {
-    inputF.placeholder = "Default Placeholder";
-});
-
+aboutPage.addEventListener('mouseover', function() {
+  aboutPage.style.backgroundColor = 'purple';
+}),
 //..........Hamburger Here..............
-
 function myFunction() {
 	const x = document.querySelector(".nav-bar-container");
 	if (x.style.display === "block") {
@@ -74,6 +70,29 @@ function myFunction() {
     let localstorage = document.querySelector(".js-cart-quantity").innerHTML = localStorage.clickcount;
     console.log(localstorage)
   }
+
+  // increment a review counter in localStorage when the form is submitted
+const form = document.querySelector('#reviewForm');
+form.addEventListener('submit', (ev) => {
+  // You can validate or let the browser run validation; here we only increment count
+  const count = Number(localStorage.getItem('reviewCount') || '0') + 1;
+  localStorage.setItem('reviewCount', count);
+  // update any visual cart / counter
+  const cartQty = document.querySelector('.js-cart-quantity');
+  if (cartQty) cartQty.textContent = count;
+  // let the form submit naturally (do not call preventDefault unless you want to handle submission via JS)
+});
+
+
+
+
+
+  // ...........Clear Local Storage after some time...........
+  setTimeout(function() {
+    localStorage.clear();
+    let localstorage = document.querySelector(".js-cart-quantity").innerHTML = 0;
+    console.log('cleared')
+  }, 2000); // Clear after 1 minute (2000 milliseconds)
 
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');

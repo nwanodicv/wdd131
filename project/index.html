@@ -1,512 +1,106 @@
 <!DOCTYPE html>
 <html lang="en-US">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>My Project</title>
-    <meta name="description" content="Project activity home page">
-    <meta name="author" content="Chimezie Victor Stephen">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link rel="" href="https://fonts.googleapis.com/css2?family=roboto&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="styles/index.css">
-     <!-- Top Navigation Menu -->
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ViJu E-commerce</title>
+  <meta name="description" content="Project activity home page" />
+  <meta name="author" content="Chimezie Victor Stephen" />
+
+  <!-- Google font (correct syntax) -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/index.css">
+
+  <!-- Font Awesome (icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
+
 <body>
-    <header>
-        <img src="images/Fuji_Gaming.jpg" alt="logo" class="logo">
-        <div>
-            <input type="search" placeholder="Search" class="search-input js-search-input">
-        </div>
-        <div class="cart-container">
-            <a class="cart-link header-link" href="#">
-                <span class="cart-quantity js-cart-quantity">0</span>
-                <img class="cart-icon" src="images/cart-emoji.png">
-                <div class="cart-text">Cart</div>
-            </a>
-        </div>
-        <div>
-            <output class="nav-links-output"></output>
-        </div>
-        <div>
-            <!-- "Hamburger menu" / "Bar icon" to toggle the navigation links -->
-            <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-                <i class="fa fa-bars"></i>
-            </a>
-        </div>
-        <div>
-            <nav class="nav-bar-container">
-                <li><a href="">Home</a></li>
-                <li><a href="">Services</a></li>
-                <li><a href="https://nwanodicv.github.io/wdd131/project/project-form.html">Products</a></li>
-                <li><a href="">contact</a></li>
-                <li><a href="">About</a></li>
-            </nav>
-        </div>
-    </header>
-    <main class="js-main">
-        <div class="products-grid js-product-grid">
-            <section>
-                <!--div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/computer-chair.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Computer Chair
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $100
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div> 
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/AC-infinity-advance-grow.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        AC Infinity Advance Grow
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $500
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected value=>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/Fuji_Gaming.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Fuji Gaming
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $200
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/gaming-accessaries.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Gaming Accessaries
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $50
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </section>
-    
-    
-            <section>
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/hog-dog-steamer-machine.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Hog Dog Streamer Machine
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $150
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/hover succer ball.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Hover Succer Ball
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $250
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/keyboard.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Keyboard
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $25
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/kids-piggy-bank-for-girls.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Kids Piggy For Girls
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $100
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-            </section>
-    
-    
-            <section>    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/lenovo-laptop.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Lenovo Laptop
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $700
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/mens-gray-sport-athletic-cotton.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Men Gray Sport-athletic Cotton
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $5
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/orange basketball.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Basketball
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $30
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div>
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div>
-    
-                <div  class="product-container">
-                    <div class="product-image-container">
-                        <img src="images/smart watch for men wemen.jpg" class="product-img1">
-                    </div>
-                    <div class="product-name">
-                        Smart watch for Men & Women
-                    </div>
-                    <div class="product-rating-star">
-                        <img src="images/Rating-Star-PNG-HD.png" class="stars-rating">
-                        <div class="product-rating-number">
-                            95
-                        </div>
-                    </div>
-                    <div class="product-price">
-                        $100
-                    </div>
-                    <div class="quantity">
-                        <div>Quantity</div>
-                        <select>
-                            <option required disabled selected>select</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                        </select>
-                    </div>
-                    <div->
-                        <button class="button-btn js-add-to-cart">Add to Cart</button>
-                    </div>
-                </div-->
-            </section>
-        </div>
-    </main>  
-    <footer>
-        &copy; 2024
-        &copy; Chimezie Victor Nwanodi
-        &copy; Nigeria
-        <p>
-        <span id="last-modification"></span>
-    </footer>
-    <script src="scripts/index.js"></script>
+  <header>
+    <img src="images/Fuji_Gaming.jpg" alt="ViJu logo" class="logo">
+    <div>
+      <input type="search" placeholder="Search" class="search-input js-search-input" aria-label="Search site">
+    </div>
+
+    <div class="cart-container">
+      <a class="cart-link header-link" href="#">
+        <span class="cart-quantity js-cart-quantity">0</span>
+        <img class="cart-icon" src="images/cart-emoji.png" alt="cart icon">
+        <span class="cart-text">Cart</span>
+      </a>
+    </div>
+
+    <!-- hamburger -->
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()" aria-label="Toggle navigation menu">
+      <i class="fa fa-bars"></i>
+    </a>
+
+    <!-- nav: li elements must be inside a list -->
+    <nav class="nav-bar-container" aria-label="Main navigation">
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Services</a></li>
+        <li><a href="project/project-form.html">Products</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">About</a></li>
+      </ul>
+    </nav>
+
+    <section class="hero-banner">
+        <h1>Big Sale on Gaming Gear!</h1>
+        <p>Get up to 30% off on all accessories this week.</p>
+        <a href="project/project-form.html" class="cta-button">Shop Now</a>
+    </section>
+
+    <section class="featured-products">
+        <h2>Featured Categories</h2>
+        <div class="products-grid js-product-grid"></div>
+    </section>
+  </header>
+
+  <main class="js-main">
+    <!-- Categories and Filters Section -->
+<section id="filters">
+  <h2>Shop by Category</h2>
+
+  <div class="filter-controls">
+    <!-- Product Categories -->
+    <div class="category-filter">
+      <label for="category">Category:</label>
+      <select id="category">
+        <option value="all">All</option>
+        <option value="electronics">Electronics</option>
+        <option value="clothing">Clothing</option>
+        <option value="home">Home</option>
+        <option value="sports">Sports</option>
+      </select>
+    </div>
+
+    <!-- Sort by -->
+    <div class="sort-filter">
+      <label for="sort">Sort by:</label>
+      <select id="sort">
+        <option value="default">Default</option>
+        <option value="price-low-high">Price: Low to High</option>
+        <option value="price-high-low">Price: High to Low</option>
+        <option value="popularity">Popularity</option>
+      </select>
+    </div>
+  </div>
+</section>
+<section id="products"></section>
+
+    <!-- Empty container — JS will populate the product cards -->
+    <div class="products-grid js-product-grid" role="region" aria-label="Products"></div>
+  </main>
+
+  <footer>
+    <div>&copy; 2024 — Chimezie Victor Nwanodi — Nigeria</div>
+    <p><span id="last-modification"></span></p>
+  </footer>
+
+  <script src="scripts/index.js"></script>
 </body>
 </html>
