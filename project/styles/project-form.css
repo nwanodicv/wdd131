@@ -3,23 +3,29 @@
     margin: 0;
 }
 
-
 body {
     font-family: 'roboto', sans-serif;
 }
 
 header, main, footer {
     max-width: 640px;
-    margin: 1rem;
-    border: 1px solid #bbb;
+    margin: 0.1rem;;
     padding: 0.5rem;
 }
+
+output {
+    font-size: 1rem;
+    margin-left: 1rem;
+    margin-top: 1rem;
+    text-align: center
+}
+
 /*.................FORM HERE............*/
 h1 {
     text-align: center;
-	color: white;
+	color: rgb(255, 255, 255);
     font-size: 1rem;
-    margin-left: 2rem;
+    margin: 2rem 2rem 3rem 5rem;
 }
 
 .form fieldset {
@@ -27,12 +33,25 @@ h1 {
 	width: 8rem;
 }
 
+.required { 
+    color: rgb(204, 0, 0); 
+    margin-left: .25rem;
+    font-size: 1rem; 
+}
+
+.visually-hidden { 
+    position:absolute!important; 
+    height:1px; 
+    width:1px; 
+    overflow:hidden; 
+    clip:rect(1px,1px,1px,1px); 
+    white-space:nowrap; }
+
 .form legend {
     text-align: center;
     margin-bottom: 1rem;
 	padding-left: .1rem;
 	font-size: 1.3rem;
-	color: rgb(243, 146, 162);
 }
 
 .form select {
@@ -44,6 +63,7 @@ h1 {
 .form input[type="radio"] {
     margin-top: 1rem;
 	display: inline-table;
+    color:rgb(128, 0, 128);
 }
 
 .checkbox-area {
@@ -79,12 +99,18 @@ h1 {
 }
 
 .option {
-	color: rgb(243, 146, 162);
+	color: rgb(128, 0, 128);
+}
+
+option {
+    color: rgb(255, 255, 255);
+    background-color: rgb(128, 0, 128)
 }
 
 select {
 	width: 16rem;
 }
+
 
 .input-name {
 	margin-top: 1rem;
@@ -102,8 +128,8 @@ button {
 	width: 16.5rem;
 	padding: .75rem;
 	border-radius: 1rem;
-	background-color: rgb(55, 55, 233);
 	font-size: 1.5rem;
+    background-color:rgb(128, 0, 128);
 	color: white;
 }
 
@@ -112,6 +138,8 @@ button {
 header {
     position: relative;
     overflow: hidden;
+    background-color: rgb(128, 0, 128);
+    color: white;
 }
 
 
@@ -128,6 +156,7 @@ header .nav-bar-container {
     justify-content: space-evenly;
 }
 
+
 header a.icon {
     margin-top: 3.2rem;
     display: block;
@@ -137,11 +166,13 @@ header a.icon {
 }
 
 a:hover {
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
+    color: #fff
 }
 
-/*-----------------------------------------------------*/
+.logo-img {
+    width: 3rem;
+    height: 4rem;
+}/*-----------------------------------------------------*/
 
 
 
@@ -152,10 +183,9 @@ a {
     text-decoration: none;
 }
 
-a:hover{
-    font-size: 1rem;
-    color: rgb(255, 255, 255);
-}
+a:hover {
+    font-size: 1.2rem;
+    }
 
 main {
     display: flex;
@@ -164,11 +194,10 @@ main {
 
 .main-album-container {
     display: grid;
-    background-color: rgb(128, 0, 128);
+    background-color: rgb(255, 255, 255)
 }
 
 .album-container{
-    background-color: gray;
     display: grid;
 }
 
@@ -213,6 +242,7 @@ main {
     margin-right: 3rem;
     width: 2rem;
     height: 1.5rem;
+    border: rgb(255, 255, 255);
 }
 
 .cart-text {
@@ -223,12 +253,12 @@ main {
 
 
 footer {
-    background-color: var( --accent1-color);
+    background-color: rgb(128, 0, 128);
     margin-top: 1rem;
     text-align: center;
     grid-column: 5 / 1;
     height: 10vh;
-    color: white;
+    color: rgb(255, 255, 255);
     font-size: .8rem;
 }
 
@@ -237,17 +267,19 @@ span {
 }
 
  /* large screen */
+  @media screen and (min-width: 500px) {
 
- * {
-    margin: 0;
-}
+    * {
+       margin: 0;
+    }
 
- @media screen and (min-width: 500px) {
     /*............Body Here............*/
     body {
         font-family: 'roboto', sans-serif;
         width: 220vh;
     }
+
+
 
     header, main, footer {
         max-width: 1500px;
@@ -343,9 +375,23 @@ span {
 
     
     .form fieldset {
-    	background-color:rgb(221, 221, 241);
+    	background-color: rgb(255, 255, 255);
     	width: 100vh;
     }
+
+    .required { 
+        color: rgb(204, 0, 0); 
+        margin-left: .25rem;
+        font-size: 1rem; 
+    }
+
+    .visually-hidden { 
+        position:absolute!important; 
+        height:1px; 
+        width:1px; 
+        overflow:hidden; 
+        clip:rect(1px,1px,1px,1px); 
+        white-space:nowrap; }
     
     .form legend {
     	padding-left: .1rem;
@@ -361,6 +407,7 @@ span {
     
     .form input[type="radio"] {
     	display: inline-table;
+        background-color: rgb(128, 0, 128);
     }
     
     .checkbox-area {
@@ -387,6 +434,7 @@ span {
     }
     
     .h5-text {
+        margin-bottom: 6px;
     	font-style: italic;
     	font-size: 15px;
     }
@@ -418,15 +466,20 @@ span {
         margin-top: 1rem;
 		margin-left: 1rem;
 	}
+
+    .form input[type="checkbox"] {
+        margin-right: 6px;
+    }
     
-    button {
+    .form button {
     	margin-top: 1rem;
-    	width: 30rem;
+    	width: 30.5rem;
     	padding: .75rem;
     	border-radius: 1rem;
     	background-color: rgb(128, 0, 128);
     	font-size: 1.5rem;
     	color: white;
+        
     }
 
     footer {
@@ -441,6 +494,5 @@ span {
     span {
         font-size: 10px;
     }
-    
 }
 /*---------------------------------------------

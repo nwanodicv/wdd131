@@ -1,221 +1,53 @@
-//..........Here is an array where products are stored..........
-
-const products = [{
-  id: '3a6t-a45jd9-7n5j',
-
-  image: 'images/computer-chair.jpg',
-
-  name: 'Computer Chair',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 10000,
-}, {
-  id: '8j57dsh-bg8n39a-8tn1',
-
-  image: 'images/AC-infinity-advance-grow.jpg',
-
-  name: 'AC Infinity Advance Grow',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 50000,
-}, {
-  id: 'j8le-su5k-m8c5d9',
-
-  image: 'images/Fuji_Gaming.jpg',
-
-  name: 'Fuji Gaming',
-
-  rating: {
-      stars: 'images/rating star emoji.jpg',
-
-      count: 95,
-  },
-
-  priceCent: 20000,
-}, {
-
-  id: 'g3ba6t-a4jd9-kl5j',
-
-  image: 'images/gaming-accessaries.jpg',
-
-  name: 'Gaming Accessaries',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 5000,
-}, {
-  id: 'j5h4g-r9ek59-fj498nw7834',
-
-  image: 'images/hog-dog-steamer-machine.jpg',
-
-  name: 'Hog Dog Streamer Machine',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 15000,
-}, {
-
-  id: 'kfu4-i4nf-58sjf4',
-
-  image: 'images/hover succer ball.jpg',
-
-  name: 'Hover Succer Ball',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 25000,
-},  {
-  
-  id: 'hf875-j4h63jk-sk58d',
-
-  image: 'images/keyboard.jpg',
-
-  name: 'Keyboard',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 2500,
-}, {
-
-  id: 'j59he-gkrcmi-sfldn',
-
-  image: 'images/kids-piggy-bank-for-girls.jpg',
-
-  name: 'Kids Piggy For Girls',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 10000,
-}, {
-
-  id: 'ngi8-dJH4-s9jns',
-
-  image: 'images/lenovo-laptop.jpg',
-
-  name: 'Lenovo Laptop',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 70000,
-},{
-
-  id: 'ngi8-dJH4-s9jns',
-
-  image: 'images/mens-gray-sport-athletic-cotton.jpg',
-
-  name: 'Men Gray Sport-athletic Cotton',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 500,
-},{
-
-  id: 'ngi8-dJH4-s9jns',
-
-  image: 'images/orange basketball.jpg',
-
-  name: 'Basketball',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 3000,
-},{
-
-  id: 'ngi8-dJH4-s9jns',
-
-  image: 'images/smart watch for men wemen.jpg',
-
-  name: 'Smart watch for Men & Women',
-
-  rating: {
-      stars: 'images/Rating-Star-PNG-HD.png',
-
-      count: 95,
-  },
-
-  priceCent: 10000,
-},];
+const product = [
+
+    {
+      id: "fc-1888",
+      name: "flux capacitor",
+      averagerating: 4.5
+    },
+    {
+      id: "fc-2050",
+      name: "power laces",
+      averagerating: 4.7
+    },
+    {
+      id: "fs-1987",
+      name: "time circuits",
+      averagerating: 3.5
+    },
+    {
+      id: "ac-2000",
+      name: "low voltage reactor",
+      averagerating: 3.9
+    },
+    {
+      id: "jj-1969",
+      name: "warp equalizer",
+      averagerating: 5.0
+    }
+];
 
 //..........Inner HTML Here.........
-let productsHTML = "";
+let productHTML = "";
 //...........Looping on the Products using ".forEach" function........
-products.forEach((product) => {
+product.forEach((item) => {
 
 //..........Generate the HTML..........
-    productsHTML  += `
-    <div>
-      <option id=${product.id} name=${product.name} disabled selected></option>
-      <option value=${product.id}>${product.name}</option>
-    <div>
-    `
+  productHTML += `<option value="${item.id}">${item.name}</option>`;
 });
+const outPut = document.querySelector('#productName').innerHTML = productHTML// display the productHTML in the select element
 
-const outPut = document.querySelector('#productName').innerHTML = productsHTML
+//..........About Page Here..........
+let aboutPage = document.querySelector('#js-about-page');
+aboutPage.addEventListener('click', function() {
+  event.preventDefault(); // Prevent default link behavior
+  alert = ('This is a product review form page for VIJUTech. Created by Chimezie Victor Stephen');
+  document.querySelector('#js-navbar-content-output').innerHTML = alert;
+}),
 
-console.log(outPut)
-//.........Placeholder Here...........
-const inputF = document.querySelector('#productName');
-
-inputF.addEventListener('focus', function() {
-    inputF.placeholder = "Focused - Select a Product...";
-});
-
-inputF.addEventListener('blur', function() {
-    inputF.placeholder = "Default Placeholder";
-});
-
-//..........Hamburger Here..............
-
-function myFunction() {
-	const x = document.querySelector(".nav-bar-container");
-	if (x.style.display === "block") {
-	  x.style.display = "none";
-	} else {
-	  x.style.display = "block";
-	}
-  }
+aboutPage.addEventListener('mouseover', function() {
+  aboutPage.style.backgroundColor = 'purple';
+}),
 
  //..............Local Storage........... 
   clickCounter();
@@ -229,6 +61,42 @@ function myFunction() {
     let localstorage = document.querySelector(".js-cart-quantity").innerHTML = localStorage.clickcount;
     console.log(localstorage)
   }
+
+  // increment a review counter in localStorage when the form is submitted
+const form = document.querySelector('#reviewForm');
+form.addEventListener('submit', (ev) => {
+  // You can validate or let the browser run validation; here we only increment count
+  const count = Number(localStorage.getItem('reviewCount') || '0') + 1;
+  localStorage.setItem('reviewCount', count);
+  // update any visual cart / counter
+  const cartQty = document.querySelector('.js-cart-quantity');
+  if (cartQty) cartQty.textContent = count;
+  // let the form submit naturally (do not call preventDefault unless you want to handle submission via JS)
+});
+
+function myFunction() {
+  const nav = document.querySelector(".nav-bar-container");
+  nav.classList.toggle("active");
+}
+
+
+//..........Hamburger Here..............
+function myFunction() {
+	const x = document.querySelector(".nav-bar-container");
+	if (x.style.display === "block") {
+	  x.style.display = "none";
+	} else {
+	  x.style.display = "block";
+	}
+  }
+
+
+  // ...........Clear Local Storage after some time...........
+  setTimeout(function() {
+    localStorage.clear();
+    let localstorage = document.querySelector(".js-cart-quantity").innerHTML = 0;
+    console.log('cleared')
+  }, 2000); // Clear after 1 minute (2000 milliseconds)
 
 // page datetime last modification
 let lastModified = document.querySelector('#last-modification');
@@ -249,3 +117,10 @@ lastModified.innerHTML = `<span class="highlight">${new Intl.DateTimeFormat(
 }`;
 
 lastModified.innerHTML = `Last Modification: ${document.lastModified}`;
+
+// productHTML  += `
+//    <div>
+//      <option id=${item.id} name=${item.name} disabled selected></option>
+//      <option value=${item.id}>${item.name}</option>
+//    <div>
+//    `
