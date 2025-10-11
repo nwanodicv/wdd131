@@ -69,32 +69,27 @@
         <!-- Product Categories -->
         <div class="category-filter">
           <label for="category">Category:</label>
-          <select id="category">
+          <select id="category" class="qty-select">
             <option value="all">All</option>
             <option value="Electronics">Electronics</option>
             <option value="Clothing">Clothing</option>
             <option value="Home">Home</option>
             <option value="Sports">Sports</option>
-          </select>
-
           </select>
         </div>
     
         <!-- Sort by -->
         <div class="sort-filter">
           <label for="sort">Sort by:</label>
-          <select id="category">
-            <option value="all">All</option>
-            <option value="Electronics">Electronics</option>
-            <option value="Clothing">Clothing</option>
-            <option value="Home">Home</option>
-            <option value="Sports">Sports</option>
+          <select id="sort" class="qty-select">
+            <option value="none">None</option>
+            <option value="low-high">Price: Low → High</option>
+            <option value="high-low">Price: High → Low</option>
           </select>
-
         </div>
       </div>
     </section>
-    <section id="products"></section>
+    
 
     <!-- Empty container — JS will populate the product cards -->
     <div class="products-grid js-product-grid" role="region" aria-label="Products"></div>

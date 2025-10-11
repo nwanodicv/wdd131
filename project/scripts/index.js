@@ -203,7 +203,7 @@ const products = [{
 let productsHTML = '';
 
 //............Generated HTML, this is to display the products on the screen dynamically........
-products.forEach((product) => {
+/*products.forEach((product) => {
     productsHTML += `
     <div  class="product-container">
             <div class="product-image-container">
@@ -223,7 +223,7 @@ products.forEach((product) => {
             </div>
             <div class="quantity">
                 <div>Quantity</div>
-                <select>
+                <select class="qty-select">
                     <option required disabled selected>select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -246,64 +246,13 @@ products.forEach((product) => {
             
         </div>`
         
-});
-
-document.querySelector('.js-product-grid').innerHTML = productsHTML;
-
+});*/
+//document.querySelector('.js-product-grid').innerHTML = productsHTML;
 
 
-//................Cart Array.........
-
-/* Cart (store minimal info in localStorage so number persists) */
-let cart = JSON.parse(localStorage.getItem('viJuCart')) || [];
-
-/* helper: get total quantity */
-function getCartTotalQuantity(){
-  return cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
-}
-
-/* update cart DOM */
-function updateCartQuantity(){
-  const total = getCartTotalQuantity();
-  document.querySelector('.js-cart-quantity').textContent = total;
-  localStorage.setItem('viJuCart', JSON.stringify(cart));
-}
-
-
-/* add to cart */
-function addToCart(productId, qty = 1){
-  let matching = cart.find(ci => ci.productId === productId);
-  if (matching){
-    matching.quantity += qty;
-  } else {
-    cart.push({ productId, quantity: qty });
-  }
-  updateCartQuantity();
-}
-
-/* add-to-cart buttons */
-document.querySelectorAll('.js-add-to-cart').forEach(button => {
-  button.addEventListener('click', (e) => {
-    const productId = button.dataset.productId;
-    // find selected quantity (closest product card)
-    const card = button.closest('.product-container');
-    const qtySelect = card.querySelector('.qty-select');
-    const qty = qtySelect && qtySelect.value ? Number(qtySelect.value) : 1;
-    addToCart(productId, qty);
-  });
-});
-
-/* initialize cart count on load */
-updateCartQuantity();
-
-// ====== CATEGORY & SORT FILTER FUNCTIONALITY ======
-
-// Get the filter elements
-const categorySelect = document.getElementById('category');
-const sortSelect = document.getElementById('sort');
 
 // Get the container holding all products
-const productsContainer = document.getElementById('products'); // make sure your product section has this id
+//const productsContainer = document.getElementById('products'); // make sure your product section has this id
 
 // Function to show products
 const productsGrid = document.querySelector('.js-product-grid'); // consistent target
@@ -329,7 +278,7 @@ function displayProducts(filteredProducts) {
       <p>$${(product.priceCent / 100).toFixed(2)}</p>
       <div class="quantity">
                 <div>Quantity</div>
-                <select>
+                <select class="qty-select">
                     <option required disabled selected>select</option>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -343,29 +292,20 @@ function displayProducts(filteredProducts) {
                     <option value="10">10</option>
                 </select>
             </div>
-      <button class="button-btn js-add-to-cart">Add to Cart</button>
+      <div class="button-div">
+                <button data-product-id="${product.id}" class="button-btn js-add-to-cart">Add to Cart</button>
+            </div>
+            <div class="reviews-container" id="reviews-${product.id}" style="display:none;"></div>
+            </div>
     </div>
     `;
     productsGrid.appendChild(div);
   });
 }
-
-
-// CATEGORY FILTER
-categorySelect.addEventListener('change', () => {
-  const selectedCategory = categorySelect.value;
-  const filtered = selectedCategory === 'all'
-    ? products
-    : products.filter(p => p.category === selectedCategory);
-  displayProducts(filtered);
-});
-
-
-
-
 // Initial display
 displayProducts(products);
 
+const categorySelect = document.getElementById('category');
 // Event listener for category filter
 categorySelect.addEventListener('change', () => {
   let selectedCategory = categorySelect.value;
@@ -374,6 +314,7 @@ categorySelect.addEventListener('change', () => {
 });
 
 // Event listener for sort filter
+const sortSelect = document.getElementById('sort');
 sortSelect.addEventListener('change', () => {
   let sorted = [...products];
   if (sortSelect.value === 'price') {
@@ -383,6 +324,61 @@ sortSelect.addEventListener('change', () => {
   }
   displayProducts(sorted);
 });
+
+
+//................Cart Array..........
+
+//................Cart Section Starts Here.............
+
+//  Initialize cart first
+let cart = JSON.parse(localStorage.getItem('viJuCart')) || []; // array of { productId, quantity }
+
+//  Helper: get total quantity
+function getCartTotalQuantity() {
+  return cart.reduce((sum, item) => sum + (item.quantity || 0), 0);
+}
+
+// Update cart DOM
+function updateCartQuantity() {
+  const total = getCartTotalQuantity();
+  const cartQuantityElement = document.querySelector('.js-cart-quantity');
+  if (cartQuantityElement) {
+    cartQuantityElement.textContent = total;
+  }
+  localStorage.setItem('viJuCart', JSON.stringify(cart));
+}
+
+//  Add to cart function
+function addToCart(productId, qty = 1) {
+  let matching = cart.find(ci => ci.productId === productId);
+  if (matching) {
+    matching.quantity += qty;
+  } else {
+    cart.push({ productId, quantity: qty });
+  }
+  updateCartQuantity();
+  localStorage.setItem('viJuCart', JSON.stringify(cart));
+  alert('Item added to cart successfully!');
+}
+
+// Add-to-cart button event listeners
+document.querySelectorAll('.js-add-to-cart').forEach(button => {
+  button.addEventListener('click', () => {
+    const productId = button.dataset.productId;
+    const card = button.closest('.product-container');
+    const qtySelect = card.querySelector('.qty-select');
+    const qty = qtySelect && qtySelect.value ? Number(qtySelect.value) : 1;
+    addToCart(productId, qty);
+  });
+});
+
+// Initialize cart count on load
+updateCartQuantity();
+
+//................Cart Section Ends Here.............
+
+
+
 
 
 // page datetime last modification
